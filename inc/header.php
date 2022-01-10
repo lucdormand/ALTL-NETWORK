@@ -1,3 +1,6 @@
+<?php
+$onDashboard = false;
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -17,6 +20,7 @@
             <a class="header_logo" href="../index.php">
                 <img src="https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e_400x400.jpg" alt="Logo" class="logo_img">
             </a>
+            <?php if (!$onDashboard) { ?>
             <ul class="flex sb">
                 <li>
                     <img src="./asset/img/home.png" alt="">
@@ -31,6 +35,22 @@
                     <a href="index.php">Nos services</a>
                 </li>
             </ul>
+            <?php } else { ?>
+            <ul class="flex sb">
+                <li>
+                    <img src="./asset/img/home.png" alt="">
+                    <a href="index.php">Accueil</a>
+                </li>
+                <li>
+                    <img src="./asset/img/log-file.png" alt="">
+                    <a href="index.php">Logs</a>
+                </li>
+                <li>
+                    <img src="./asset/img/back.png" alt="">
+                    <a href="index.php">Site principal</a>
+                </li>
+            </ul>
+            <?php } ?>
             <div class="registerBtn">
                 <a href="login.php">S'inscrire/se connecter</a>
             </div>
