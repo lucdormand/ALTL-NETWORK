@@ -15,7 +15,7 @@ body {
     /*font-weight: 300;*/
     /*font-size: 1.5em;*/
     /*line-height: 1.3;*/
-    font: 400 13px/1.3 verdana, sans-serif;
+    font: 400 13px/1.3 Poppins, sans-serif;
     overflow-x: hidden;
 }
 
@@ -51,7 +51,10 @@ a {
 .absolute {position: absolute}
 
 
-
+header {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
 header .logo_img, footer .logo_img {
     width: 100px;
     border-radius: 50%;
@@ -116,8 +119,8 @@ header ul li a:hover {
 }
 
 header ul li a img{
-    width: 60px;
-    margin: 0 auto;
+    width: 50px;
+    margin: 10px auto;
 }
 
 footer>div {
@@ -132,4 +135,10 @@ footer ul {
 }
 footer ul li {
     margin: 1rem 0;
+}
+footer a {
+    transition: 0.1s;
+}
+footer a:hover {
+    color: rgba(0,0,0,0.7);
 }
