@@ -23,7 +23,7 @@
                     <a href="index.php">Accueil</a>
                 </li>
                 <li>
-                    <img src="./asset/img/about.png" alt="">
+                    <img src="./asset/img/about_menu.png" alt="">
                     <a href="index.php">A propos</a>
                 </li>
                 <li>
