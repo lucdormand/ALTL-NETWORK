@@ -36,11 +36,11 @@ function recupInputValue($key) {
 function textValidation($errors,$value,$name,$min,$max) {
 
     if (empty($value)){
-        $errors[$name] = 'veuillez renseigner ce champ';
+        $errors[$name] = 'Veuillez renseigner ce champ';
     } elseif (strlen($value)<$min) {
-        $errors[$name] = 'veuillez renseigner plus de '.($min-1).' caractères';
+        $errors[$name] = 'Veuillez renseigner plus de '.($min-1).' caractères';
     } elseif (strlen($value)>$max) {
-        $errors[$name] = 'veuillez renseigner moins de '.($max+1).' caractères';
+        $errors[$name] = 'Veuillez renseigner moins de '.($max+1).' caractères';
     }
     return $errors;
 }
@@ -150,3 +150,28 @@ function isLogged()
     }
     return false;
 }
+function verifUserAlreadyConnected(){
+    if (isLogged()==true){
+        header('Location: index.php');
+    }else{ }
+}
+
+
+function viewError($errors,$key)
+{
+    if(!empty($errors[$key])) {
+        echo $errors[$key];
+    }
+}
+
+function mailValidation($errors,$value,$key){
+    if(!empty($value)){
+        if (filter_var($value, FILTER_VALIDATE_EMAIL)==false) {
+            $errors[$key]='Veuillez renseigner un email valide';
+        }
+    } else{
+        $errors[$key]='Veuillez renseigner ce champ';
+    }
+    return $errors;
+}
+
