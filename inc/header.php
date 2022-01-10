@@ -10,10 +10,27 @@
 
 </head>
 <body>
-    <header>
-        <div>
+    <header class="wrap">
+        <div class="flex sb">
             <a class="header_logo" href="../index.php">
-                <h1>LOGO</h1>
+                <img src="https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e_400x400.jpg" alt="Logo" class="logo_img">
             </a>
+            <ul class="flex sb">
+                <li>
+                    <img src="./asset/img/home.png" alt="">
+                    <a href="index.php">Accueil</a>
+                </li>
+                <li>
+                    <img src="./asset/img/about.png" alt="">
+                    <a href="index.php">A propos</a>
+                </li>
+                <li>
+                    <img src="./asset/img/sec.png" alt="">
+                    <a href="index.php">Nos services</a>
+                </li>
+            </ul>
+            <div class="registerBtn">
+                <a href="login.php">S'inscrire/se connecter</a>
+            </div>
         </div>
     </header>
