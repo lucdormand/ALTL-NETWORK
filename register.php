@@ -2,9 +2,11 @@
 session_start();
 require('inc/pdo.php');
 require('inc/fonctions.php');
-
+$tab=1;
 $success=false;
 $errors = [];
+
+if ($tab===0){
 if(!empty($_POST['submitted'])) {
     // Faille xss
     $pseudo    = cleanXss('pseudo');
@@ -56,6 +58,37 @@ if(!empty($_POST['submitted'])) {
         header('refresh:5;url=index.php');
     }
 }
+} else if($tab===1){
+    if(!empty($_POST['submitted'])) {
+        // Faille xss
+        $login   = trim(strip_tags($_POST['login']));
+        $password  = trim(strip_tags($_POST['password']));
+
+        $sql = "SELECT * FROM reseau_user WHERE email = :login";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':login',$login,PDO::PARAM_STR);
+        $query->execute();
+        $user= $query->fetch();
+
+        if(empty($user)) {
+            $errors['login'] = 'Email invalide';
+        } else {
+            if (password_verify($password , $user['password'] )==true){
+                $_SESSION['user']=array(
+                    'id'    =>$user['id'],
+                    'email' =>$user['email'],
+                    'status'=>$user['status'],
+                    'ip'     =>$_SERVER['REMOTE_ADDR'],//::1
+                );
+            }else {
+                $errors['password'] = 'Mot de passe incorrect';
+            }
+        }
+        if(count($errors) == 0) {
+            header('Location: index.php');
+        }
+    }
+}
 ?>
 
 <!doctype html>
@@ -70,7 +103,7 @@ if(!empty($_POST['submitted'])) {
     <link rel="stylesheet" href="asset/css/responsive.css">
 </head>
 <body>
-
+<?php if($tab===0){ ?>
 <section id="register_form">
     <div class="wrap2">
         <?php if($success==false){ ?>
@@ -104,7 +137,38 @@ if(!empty($_POST['submitted'])) {
         <?php } else {echo'<div class="info_box_success"><h2>Bienvenue ! Votre compte a bien été créé !</h2><h4>Redirection dans 5 secondes.</h4></div>';} ?>
     </div>
 </section>
+<?php } else if($tab=1){ ?>
 
+    <form action="" method="post" class="wrapform" novalidate>
+
+        <div class="info_box">
+            <label for="login"></label>
+            <input type="text" placeholder="Mail" id="login" name="login" value="<?= recupInputValue('login'); ?>">
+            <span class="error"><?= viewError($errors,'login'); ?></span>
+        </div>
+
+        <div class="info_box">
+            <label for="password"></label>
+            <input type="password" placeholder="Mot de passe" id="password" name="password" value="">
+            <span class="error"><?= viewError($errors,'password'); ?></span>
+        </div>
+
+        <div class="info_box_button">
+            <input type="submit" name="submitted" value="SE CONNECTER">
+        </div>
+        <div>
+            <?php  echo'<a href="mailmissingpassword.php">Mot de passe oublié ?</a>'?>
+        </div>
+
+    </form>
+    </div>
+    </section>
+
+
+
+
+
+<?php }?>
 
 </body>
 </html>
