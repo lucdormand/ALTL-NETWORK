@@ -13,46 +13,55 @@ $onDashboard = false;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Poppins:ital,wght@0,400;0,700;1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="asset\css\style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Poppins:ital,wght@0,400;0,700;1,100&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header class="wrap">
         <div class="flex sb">
-            <a class="header_logo" href="../index.php">
+            <a class="header_logo" href="index.php">
                 <img src="https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e_400x400.jpg" alt="Logo" class="logo_img">
             </a>
-            <?php if (!$onDashboard) { ?>
             <ul class="flex sb">
                 <li>
-                    <img src="./asset/img/home.png" alt="">
-                    <a href="index.php">Accueil</a>
+                    <a href="index.php">
+                        <img src="./asset/img/home.png" alt="">
+                        <p>Accueil</p>
+                    </a>
                 </li>
                 <li>
-                    <img src="./asset/img/about_menu.png" alt="">
-                    <a href="index.php">A propos</a>
+
+                    <a href="index.php#about">
+                        <img src="./asset/img/about_menu.png" alt="">
+                        <p>A propos</p>
+                    </a>
                 </li>
+                <?php if (isLogged()) { ?>
                 <li>
-                    <img src="./asset/img/sec.png" alt="">
-                    <a href="index.php">Nos services</a>
+                    <a href="dashboard.php">
+                        <img src="./asset/img/sec.png" alt="">
+                        <p>Tableau de bord</p>
+                    </a>
                 </li>
+                <?php } ?>
             </ul>
-            <?php } else { ?>
-            <ul class="flex sb">
-                <li>
-                    <img src="./asset/img/home.png" alt="">
-                    <a href="index.php">Accueil</a>
-                </li>
-                <li>
-                    <img src="./asset/img/log-file.png" alt="">
-                    <a href="index.php">Logs</a>
-                </li>
-                <li>
-                    <img src="./asset/img/back.png" alt="">
-                    <a href="index.php">Site principal</a>
-                </li>
-            </ul>
+
+            <?php if (!isLogged()) { ?>
+                    <div class="headerBtns">
+                        <div class="registerBtn">
+                            <a href="register.php">S'inscrire</a>
+                        </div>
+                        <div class="registerBtn">
+                            <a href="login.php">Se connecter</a>
+                        </div>
+                    </div>
+            <?php } else {?>
+                <div class="logoutBtn">
+                    <a href="logout.php">Se déconnecter</a>
+                </div>
             <?php } ?>
-            <div class="registerBtn">
-                <a href="register.php">S'inscrire/se connecter</a>
-            </div>
         </div>
     </header>
