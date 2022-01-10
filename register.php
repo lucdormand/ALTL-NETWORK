@@ -2,6 +2,7 @@
 session_start();
 require('inc/pdo.php');
 require('inc/fonctions.php');
+require ('./asset/js/main.js');
 
 $success=false;
 $errors = [];
@@ -72,34 +73,39 @@ if(!empty($_POST['submitted'])) {
 <body>
 
 <section id="register_form">
+    <div class="lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
     <div class="wrap2">
-        <h1>S'inscrire</h1>
+        <h1>Inscription</h1>
         <?php if($success==false){ ?>
         <form action="" method="post" class="wrapform" novalidate>
 
             <div class="info_box">
-                <h3>Email</h3>
+                <h3>Email :</h3>
                 <label for="pseudo"></label>
                 <input type="text" placeholder="Nom d'utilisateur*" id="pseudo" name="pseudo" value="<?=recupInputValue('pseudo');?>">
                 <hr>
             </div>
             <span class="error"><?= viewError($errors,'pseudo'); ?></span>
             <div class="info_box">
-                <h3>Nom d'utilisateur</h3>
+                <h3>Nom d'utilisateur :</h3>
                 <label for="email"></label>
                 <input type="email" placeholder="Email*" id="email" name="email" value="<?= recupInputValue('email'); ?>">
                 <hr>
             </div>
             <span class="error"><?= viewError($errors,'email'); ?></span>
             <div class="info_box">
-                <h3>Mot de passe</h3>
+                <h3>Mot de passe :</h3>
                 <label for="password"></label>
                 <input type="password" placeholder="Mot de passe*" id="password" name="password" value="">
                 <hr>
             </div>
             <span class="error"><?= viewError($errors,'password'); ?></span>
             <div class="info_box">
-                <h3>Confirmer le mot de passe</h3>
+                <h3>Confirmer le mot de passe :</h3>
                 <label for="password2"></label>
                 <input type="password" placeholder="Confirmer Mot de passe*" id="password2" name="password2" value="">
                 <hr>
@@ -107,14 +113,17 @@ if(!empty($_POST['submitted'])) {
             </div>
 
             <div class="info_box_button">
-                <input type="submit" name="submitted" value="S'inscrire">
+                <input type="submit" name="submitted" value="Inscription">
             </div>
 
         </form>
         <?php } else {echo'<div class="info_box_success"><h2>Bienvenue ! Votre compte a bien été créé !</h2><h4>Redirection dans 5 secondes.</h4></div>';} ?>
     </div>
 </section>
-
-
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+<script src="asset/js/jquery.flexslider.js"></script>
+<script src="asset/js/main.js"></script>
 </body>
 </html>
