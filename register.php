@@ -2,7 +2,6 @@
 session_start();
 require('inc/pdo.php');
 require('inc/fonctions.php');
-require ('./asset/js/main.js');
 
 $success=false;
 $errors = [];
@@ -69,6 +68,9 @@ if(!empty($_POST['submitted'])) {
     <title>Inscription</title>
     <link rel="stylesheet" href="asset/css/style.css">
     <link rel="stylesheet" href="asset/css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
