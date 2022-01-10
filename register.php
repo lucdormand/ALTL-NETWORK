@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('inc/pdo.php');
+require('inc/PDO.php');
 require('inc/fonctions.php');
 $tab=1;
 $success=false;
@@ -90,6 +90,7 @@ if(!empty($_POST['submitted'])) {
     }
 }
 ?>
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -163,5 +164,6 @@ if(!empty($_POST['submitted'])) {
     </div>
     </section>
 <?php }?>
+
 </body>
 </html>
