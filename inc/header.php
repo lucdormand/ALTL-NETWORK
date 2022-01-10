@@ -19,7 +19,7 @@
                 <li>
                     <a href="index.php">
                         <img src="./asset/img/home.png" alt="">
-                        <p>Acceuil</p>
+                        <p>Accueil</p>
                     </a>
                 </li>
                 <li>
@@ -37,10 +37,15 @@
                 </li>
                 <?php } ?>
             </ul>
-            <?php if (isLogged()) { ?>
-                <div class="registerBtn">
-                    <a href="login.php">S'inscrire/se connecter</a>
-                </div>
+            <?php if (!isLogged()) { ?>
+                    <div class="headerBtns">
+                        <div class="registerBtn">
+                            <a href="register.php">S'inscrire</a>
+                        </div>
+                        <div class="registerBtn">
+                            <a href="login.php">Se connecter</a>
+                        </div>
+                    </div>
             <?php } else {?>
                 <div class="logoutBtn">
                     <a href="logout.php">Se déconnecter</a>

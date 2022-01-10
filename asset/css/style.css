@@ -40,6 +40,7 @@ a {
     max-width: 1440px;
     margin: auto;
     width: 100%;
+    padding: 0 10px;
 }
 
 .flex {display: flex;}
@@ -49,14 +50,17 @@ a {
 .relative {position: relative}
 .absolute {position: absolute}
 
-header {
-    padding: 20px;
-}
 
-header .logo_img {
+
+header .logo_img, footer .logo_img {
     width: 100px;
     border-radius: 50%;
     margin: 20px 0;
+}
+header .headerBtns {
+    width: 20%;
+    text-align: center;
+    justify-content: space-around;
 }
 header .registerBtn, header .logoutBtn {
     margin: 42px 0 auto 0;
@@ -65,7 +69,7 @@ header .registerBtn a {
     background-color: black;
     color: white;
     height: 42px;
-    padding:12px 22px ;
+    padding:12px 30px;
     border-radius: 10px;
     margin: auto 0;
     transition: 0.2s;
@@ -91,12 +95,12 @@ header .logoutBtn a:hover {
     color: darkred;
 }
 
-
 header ul {
     width: 40%;
 }
 header ul li {
     width: 33%;
+    margin: auto 0;
 }
 header ul li a {
     width: 100%;
@@ -111,8 +115,21 @@ header ul li a:hover {
     background-color: rgba(0,0,0,20%)
 }
 
-
 header ul li a img{
     width: 60px;
     margin: 0 auto;
+}
+
+footer>div {
+    justify-content: space-around;
+}
+footer>p {
+    text-align: center;
+    margin: 1rem 0 2rem 0;
+}
+footer ul {
+    margin: auto 0;
+}
+footer ul li {
+    margin: 1rem 0;
 }
