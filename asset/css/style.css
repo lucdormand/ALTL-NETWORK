@@ -46,26 +46,55 @@ img {
 .relative {position: relative}
 .absolute {position: absolute}
 
-header .logo_img {
-    width: 150px;
-    border-radius: 50%;
-}
-header ul {
-    width: 40%;
+header {
+    padding: 20px;
 }
 
+header .logo_img {
+    width: 100px;
+    border-radius: 50%;
+    margin: 20px 0;
+}
 header .registerBtn {
+    margin: 42px 0 auto 0;
+}
+header .registerBtn a {
     background-color: black;
     color: white;
     height: 42px;
-    padding: 0 20px ;
-    margin: auto 0;
+    padding:10px 20px ;
     border-radius: 10px;
+    margin: auto 0;
+    transition: 0.2s;
 }
 
-header .registerBtn a {
-    color: white;
-    height: 42px;
-    margin: auto;
+header .registerBtn a:hover {
+    background-color: white;
+    outline: solid black 2px;
+    color: black;
 }
 
+header ul {
+    width: 40%;
+}
+header ul li {
+    width: 33%;
+}
+header ul li a {
+    width: 100%;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.2s;
+    text-align: center;
+    background-color: rgba(0,0,0,0);
+}
+header ul li a:hover {
+    background-color: rgba(0,0,0,20%)
+}
+
+
+header ul li a img{
+    width: 60px;
+    margin: 0 auto;
+}

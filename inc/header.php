@@ -12,22 +12,30 @@
 <body>
     <header class="wrap">
         <div class="flex sb">
-            <a class="header_logo" href="../index.php">
+            <a class="header_logo" href="index.php">
                 <img src="https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e_400x400.jpg" alt="Logo" class="logo_img">
             </a>
             <ul class="flex sb">
                 <li>
-                    <img src="./asset/img/home.png" alt="">
-                    <a href="index.php">Accueil</a>
+                    <a href="index.php">
+                        <img src="./asset/img/home.png" alt="">
+                        <p>Acceuil</p>
+                    </a>
                 </li>
                 <li>
-                    <img src="./asset/img/about.png" alt="">
-                    <a href="index.php">A propos</a>
+                    <a href="index.php#about">
+                        <img src="./asset/img/about.png" alt="">
+                        <p>A propos</p>
+                    </a>
                 </li>
+                <?php if (isLogged()) { ?>
                 <li>
-                    <img src="./asset/img/sec.png" alt="">
-                    <a href="index.php">Nos services</a>
+                    <a href="dashboard.php">
+                        <img src="./asset/img/sec.png" alt="">
+                        <p>Tableau de bord</p>
+                    </a>
                 </li>
+                <?php } ?>
             </ul>
             <div class="registerBtn">
                 <a href="login.php">S'inscrire/se connecter</a>
