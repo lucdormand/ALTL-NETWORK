@@ -69,3 +69,90 @@ header .registerBtn a {
     margin: auto;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* INSCRIPTION */
+
+
+#register_form {}
+
+#register_form .wrap2 {
+    max-width: 800px;
+    margin: 0 auto;
+
+
+}
+
+#register_form .info_box{
+    padding-top: 20px;
+
+}
+#register_form h1 {
+    text-align: center;
+}
+#register_form h3 {
+
+}
+
+#register_form input{
+    border: none;
+    width: 100%;
+    padding: 10px 0;
+
+}
+#register_form input[type="submit"] {
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    width: 20%;
+    cursor: pointer;
+    padding: 7px;
+
+}
+#register_form .info_box_button{
+    margin-top: 50px;
+    text-align: center;
+
+
+}
+
+#register_form .error {
+    color: red;
+}

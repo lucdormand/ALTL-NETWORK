@@ -73,33 +73,43 @@ if(!empty($_POST['submitted'])) {
 
 <section id="register_form">
     <div class="wrap2">
+        <h1>S'inscrire</h1>
         <?php if($success==false){ ?>
         <form action="" method="post" class="wrapform" novalidate>
 
             <div class="info_box">
+                <h3>Email</h3>
                 <label for="pseudo"></label>
                 <input type="text" placeholder="Nom d'utilisateur*" id="pseudo" name="pseudo" value="<?=recupInputValue('pseudo');?>">
+                <hr>
             </div>
             <span class="error"><?= viewError($errors,'pseudo'); ?></span>
             <div class="info_box">
+                <h3>Nom d'utilisateur</h3>
                 <label for="email"></label>
                 <input type="email" placeholder="Email*" id="email" name="email" value="<?= recupInputValue('email'); ?>">
+                <hr>
             </div>
             <span class="error"><?= viewError($errors,'email'); ?></span>
             <div class="info_box">
+                <h3>Mot de passe</h3>
                 <label for="password"></label>
                 <input type="password" placeholder="Mot de passe*" id="password" name="password" value="">
+                <hr>
             </div>
             <span class="error"><?= viewError($errors,'password'); ?></span>
             <div class="info_box">
+                <h3>Confirmer le mot de passe</h3>
                 <label for="password2"></label>
                 <input type="password" placeholder="Confirmer Mot de passe*" id="password2" name="password2" value="">
+                <hr>
+                <p>Les champs avec * sont requis</p>
             </div>
 
             <div class="info_box_button">
-                <input type="submit" name="submitted" value="ENVOYER">
+                <input type="submit" name="submitted" value="S'inscrire">
             </div>
-            <p>Les champs avec * sont requis</p>
+
         </form>
         <?php } else {echo'<div class="info_box_success"><h2>Bienvenue ! Votre compte a bien été créé !</h2><h4>Redirection dans 5 secondes.</h4></div>';} ?>
     </div>
