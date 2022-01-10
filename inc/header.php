@@ -30,7 +30,7 @@
                 </li>
             </ul>
             <div class="registerBtn">
-                <a href="login.php">S'inscrire/se connecter</a>
+                <a href="register.php">S'inscrire/se connecter</a>
             </div>
         </div>
     </header>
