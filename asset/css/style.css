@@ -27,7 +27,10 @@ ul, ol {
 img {
     width: 100%;
 }
-
+a {
+    text-decoration: none;
+    color: black;
+}
 .clear:before, .clear:after {content: ' '; display: table;}
 .clear:after {clear: both;}
 .clear {*zoom: 1;}
@@ -55,24 +58,39 @@ header .logo_img {
     border-radius: 50%;
     margin: 20px 0;
 }
-header .registerBtn {
+header .registerBtn, header .logoutBtn {
     margin: 42px 0 auto 0;
 }
 header .registerBtn a {
     background-color: black;
     color: white;
     height: 42px;
-    padding:10px 20px ;
+    padding:12px 22px ;
     border-radius: 10px;
     margin: auto 0;
     transition: 0.2s;
 }
-
+header .logoutBtn a {
+    background-color: darkred;
+    color: white;
+    height: 42px;
+    padding:12px 22px ;
+    border-radius: 10px;
+    margin: auto 0;
+    transition: 0.2s;
+}
 header .registerBtn a:hover {
     background-color: white;
     outline: solid black 2px;
     color: black;
 }
+
+header .logoutBtn a:hover {
+    background-color: white;
+    outline: solid darkred 2px;
+    color: darkred;
+}
+
 
 header ul {
     width: 40%;

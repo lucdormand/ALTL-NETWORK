@@ -37,8 +37,14 @@
                 </li>
                 <?php } ?>
             </ul>
-            <div class="registerBtn">
-                <a href="login.php">S'inscrire/se connecter</a>
-            </div>
+            <?php if (isLogged()) { ?>
+                <div class="registerBtn">
+                    <a href="login.php">S'inscrire/se connecter</a>
+                </div>
+            <?php } else {?>
+                <div class="logoutBtn">
+                    <a href="logout.php">Se déconnecter</a>
+                </div>
+            <?php } ?>
         </div>
     </header>
