@@ -46,6 +46,7 @@ a {
 
 
 
+
 header, footer {
     font-weight: bold;
     font-size: 0.9rem;
@@ -53,16 +54,18 @@ header, footer {
 }
 header .logo_img, footer .logo_img {
     width: 100px;
+    height: 100px;
     border-radius: 50%;
-    margin: 20px 0;
+    margin: 5px 0;
 }
 header .headerBtns {
-    width: 20%;
+    width: 30%;
     text-align: center;
     justify-content: space-around;
+    min-width: 300px;
 }
 header .registerBtn, header .logoutBtn {
-    margin: 42px 0 auto 0;
+    margin: auto 0;
 }
 header .registerBtn a {
     background-color: black;
@@ -95,7 +98,7 @@ header .logoutBtn a:hover {
 }
 
 header ul {
-    width: 40%;
+    width: 30%;
 }
 header ul li {
     width: 33%;
@@ -104,7 +107,7 @@ header ul li {
 header ul li a {
     width: 100%;
     display: inline-block;
-    padding: 20px;
+    padding: 0px;
     border-radius: 10px;
     transition: 0.2s;
     text-align: center;
@@ -115,8 +118,8 @@ header ul li a:hover {
 }
 
 header ul li a img{
-    width: 50px;
-    margin: 10px auto;
+    width: 30px;
+    margin: 5px auto;
 }
 
 
@@ -183,214 +186,6 @@ footer a {
 footer a:hover {
     color: rgba(0,0,0,0.7);
 }
-
-/* INSCRIPTION */
-
-
-#register_form {}
-
-#register_form .wrap2 {
-    max-width: 800px;
-    margin: 0 auto;
-
-
-}
-
-#register_form .info_box{
-    padding-top: 20px;
-
-}
-#register_form h1 {
-    text-align: center;
-}
-#register_form h3 {
-
-}
-
-#register_form input{
-    border: none;
-    width: 100%;
-    padding: 10px 0;
-
-}
-#register_form input[type="submit"] {
-    background-color: black;
-    border-radius: 10px;
-    color: white;
-    width: 20%;
-    cursor: pointer;
-    padding: 7px;
-
-}
-#register_form .info_box_button{
-    margin-top: 50px;
-    text-align: center;
-
-
-}
-
-#register_form .error {
-    color: red;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
