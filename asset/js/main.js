@@ -1,11 +1,4 @@
 
-
-
-
-
-
-
-
 window.sr = ScrollReveal();
 
 sr.reveal('.footer',{
@@ -18,3 +11,12 @@ sr.reveal('.copyrights',{
     duration: 2500,
     distance: '100%',
 });
+
+
+sr.reveal('.wrap2',{
+    origin: 'bottom',
+    duration: 2000,
+    distance: '70%',
+
+});
+
