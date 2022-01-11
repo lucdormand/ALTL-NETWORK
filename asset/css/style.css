@@ -311,3 +311,13 @@ footer a:hover {
     color: red;
 }
 
+/* DASHBOARD */
+#dashboard_home .wrap h2:first-of-type {
+    font-size: 2rem;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+#dashboard_home .graph1 {
+    width: 50%;
+    margin: 2rem auto;
+}
