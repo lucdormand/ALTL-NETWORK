@@ -14,10 +14,6 @@ $onDashboard = false;
     <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Poppins:ital,wght@0,400;0,700;1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="asset/flexslider/flexslider.css" type="text/css">
     <link rel="stylesheet" href="asset\css\style.css">
-
-
-
-
 </head>
 <body>
     <header class="wrap">
@@ -33,7 +29,6 @@ $onDashboard = false;
                     </a>
                 </li>
                 <li>
-
                     <a href="#info">
                         <img src="./asset/img/about_menu.png" alt="">
                         <p>A propos</p>
