@@ -1,7 +1,7 @@
 <footer class="wrap">
     <div class="flex footer">
         <a class="header_logo" href="index.php">
-            <img src="https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e_400x400.jpg" alt="Logo" class="logo_img">
+            <img src="asset/img/Logo_ALTL.png" alt="Logo" class="logo_img">
         </a>
         <ul>
             <li>

@@ -53,9 +53,7 @@ header, footer {
     font-family: poppins;
 }
 header .logo_img, footer .logo_img {
-    width: 100px;
     height: 100px;
-    border-radius: 50%;
     margin: 5px 0;
 }
 header .headerBtns {
