@@ -29,9 +29,27 @@ sr.reveal('.wrap2',{
 
 });
 
-function sendFrame () {
+$(function() {
+    var words = [
+            'CHEZ ALTL NETWORK',
+            'VOTRE SECURITÉ EST NOTRE PRIORITÉ',
+            'NOUS SOMME DISPONIBLE 24H/24',
 
-}
+        ],
+        i = 0;
+    setInterval(function () {
+        $("#word").fadeOut(function () {
+            $(this).html(words[i = (i + 1) % words.length]).fadeIn(1500);
+        })
+    }, 3500,)
+});
+
+$(".scroll").click(function (){
+    var section = $("." + this.id)
+    $("html,body").animate({scrollTop: section.offset().top}, 'slow');
+});
+
+
 $('.testsAjax').ready(function ()  {
 
     $.ajax({

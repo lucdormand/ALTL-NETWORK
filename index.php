@@ -6,14 +6,19 @@ include('inc/header.php');
 ?>
 
 <section id="accueil">
-    <div>
-        <h2><strong>BIENVENUE</strong></h2>
+    <div class="accueil_flex">
+        <div>
+            <h1> BIENVENUE </h1>
+        </div>
+        <div>
+            <h1 class="catchphrase"><span id="word">CHEZ ALTL NETWORK</span></h1>
+        </div>
     </div>
     <div>
-        <h2>VOTRE SECURITÉ EST NOTRE PRIORITÉ</h2>
-    </div>
-    <div>
-        <img src="asset/img/security.png" alt="">
+<!--        <img class="img_security"src="asset/img/security.png" alt="">-->
+        <div class="down_arrow">
+            <a class="scroll down-arrow"  href="#info"><img src="asset/img/down-arrow.svg" alt="down-arrow.svg"></a>
+        </div>
     </div>
 </section>
 
