@@ -1,3 +1,9 @@
+console.log('oui')
+$(window).on('load',function() {
+    $('.flexslider').flexslider({
+        animation:"slide"
+    });
+})
 
 window.sr = ScrollReveal();
 
@@ -19,4 +25,6 @@ sr.reveal('.wrap2',{
     distance: '70%',
 
 });
+
+
 

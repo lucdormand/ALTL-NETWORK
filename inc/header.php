@@ -12,29 +12,29 @@ $onDashboard = false;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Poppins:ital,wght@0,400;0,700;1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="asset/flexslider/flexslider.css" type="text/css">
     <link rel="stylesheet" href="asset\css\style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Poppins:ital,wght@0,400;0,700;1,100&display=swap" rel="stylesheet">
+
+
 
 </head>
 <body>
     <header class="wrap">
         <div class="flex sb">
             <a class="header_logo" href="index.php">
-                <img src="https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e_400x400.jpg" alt="Logo" class="logo_img">
+                <img src="asset/img/Logo_ALTL.png" width="300" height="140" alt="Logo" class="logo_img" >
             </a>
             <ul class="flex sb">
                 <li>
-                    <a href="index.php">
+                    <a href="#accueil">
                         <img src="./asset/img/home.png" alt="">
                         <p>Accueil</p>
                     </a>
                 </li>
                 <li>
 
-                    <a href="index.php#about">
+                    <a href="#info">
                         <img src="./asset/img/about_menu.png" alt="">
                         <p>A propos</p>
                     </a>
