@@ -38,7 +38,7 @@ if(!empty($_POST['submitted'])) {
     }
 }
 ?>
-
+<link rel="stylesheet" href="asset/css/style.css">
 <section id="register_form">
     <div class="wrap2">
         <form action="" method="post" class="wrapform" novalidate>

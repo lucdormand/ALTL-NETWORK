@@ -54,9 +54,7 @@ header, footer {
     font-size: 0.9rem;
     font-family: poppins;
 }
-footer .logo_img, footer .logo_img {
-    width: 300px;
-}
+
 header .logo_img, footer .logo_img {
     height: 100px;
     border-radius: 50%;
@@ -205,7 +203,7 @@ header ul li a img{
     display:flex;flex-flow: column;gap:2rem;justify-content: center;align-items: center;
     background: grey;
     width:300px;height:481.5px;
-    padding: 1rem;
+
 }
 #services .slide_item h2,p {
     padding:1rem;

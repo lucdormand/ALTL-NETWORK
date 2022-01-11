@@ -77,7 +77,7 @@ include('inc/header.php');
                     <li>
                         <div class="slide_item">
                             <h2>Protection contre attaques en ligne.</h2>
-                            <p>Ceci est un test tkt</p>
+                            <p> ALTL Network propose des services de cybersécurité contre les potentielles attaques en ligne ainsi qu'un moyen de surveillance de son réseau.</p>
                         </div>
                         <img src="asset/img/slider_1.jpg" />
                     </li>

@@ -1,7 +1,10 @@
 console.log('oui')
 $(window).on('load',function() {
     $('.flexslider').flexslider({
-        animation:"slide"
+        animation:"slide",
+        slideshow: true,
+        slideshowSpeed: 7000,
+        controlNav: false,
     });
 })
 

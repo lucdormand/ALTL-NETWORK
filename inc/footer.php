@@ -23,7 +23,7 @@
             </li>
         </ul>
     </div>
-    <p class="copyrights">Copyright placeholder</p>
+    <p class="copyrights">@Copyright placeholder</p>
 </footer>
 
 <script src="https://unpkg.com/scrollreveal"></script>
