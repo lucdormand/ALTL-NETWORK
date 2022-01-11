@@ -1,14 +1,15 @@
 <footer class="wrap">
     <div class="flex footer">
-        <a class="header_logo" href="index.php">
-            <img src="https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e_400x400.jpg" alt="Logo" class="logo_img">
+
+        <a class="footer_logo" href="index.php">
+            <img src="asset/img/Logo_ALTL.png" alt="Logo" class="logo_img">
         </a>
         <ul>
             <li>
-                <a href="index.php">Accueil</a>
+                <a href="#accueil">Accueil</a>
             </li>
             <li>
-                <a href="index.php#about">A propos</a>
+                <a href="#info">A propos</a>
             </li>
             <li>
                 <?php if (!isLogged()) { ?>
@@ -23,13 +24,14 @@
             </li>
         </ul>
     </div>
-    <p class="copyrights">Copyright placeholder</p>
+    <p class="copyrights">@Copyright placeholder</p>
 </footer>
-</body>
 
 <script src="https://unpkg.com/scrollreveal"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-<script src="asset/js/jquery.flexslider.js"></script>
+<script src="asset/flexslider/jquery.flexslider.js"></script>
 <script src="asset/js/main.js"></script>
+
+</body>
 </html>

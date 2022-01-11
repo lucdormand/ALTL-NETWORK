@@ -5,6 +5,8 @@
 * {
     margin: 0; padding: 0;
     box-sizing: border-box;
+}
+html {
     scroll-behavior: smooth;
 }
 body {
@@ -46,23 +48,25 @@ a {
 
 
 
+
 header, footer {
     font-weight: bold;
     font-size: 0.9rem;
     font-family: poppins;
 }
+
 header .logo_img, footer .logo_img {
-    width: 100px;
-    border-radius: 50%;
-    margin: 20px 0;
+    height: 100px;
+    margin: 5px 0;
 }
 header .headerBtns {
-    width: 20%;
+    width: 30%;
     text-align: center;
     justify-content: space-around;
+    min-width: 300px;
 }
 header .registerBtn, header .logoutBtn {
-    margin: 42px 0 auto 0;
+    margin: auto 0;
 }
 header .registerBtn a {
     background-color: black;
@@ -95,7 +99,7 @@ header .logoutBtn a:hover {
 }
 
 header ul {
-    width: 40%;
+    width: 30%;
 }
 header ul li {
     width: 33%;
@@ -104,7 +108,7 @@ header ul li {
 header ul li a {
     width: 100%;
     display: inline-block;
-    padding: 20px;
+    padding: 0px;
     border-radius: 10px;
     transition: 0.2s;
     text-align: center;
@@ -115,30 +119,71 @@ header ul li a:hover {
 }
 
 header ul li a img{
-    width: 50px;
-    margin: 10px auto;
+    width: 30px;
+    margin: 5px auto;
+}
+header ul li a p {
+    padding: 5px;
 }
 
+/*header .header_logo {*/
+/*width:200px;*/
+/*}*/
 
 /*PARTIE ACCUEIL    */
-#acceuil{
+#accueil{
     height:100vh;
     /*background: url("../img/bg/home.jpg") no-repeat center center/cover;*/
     background-image: radial-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("../img/bg/home.jpg");
     background-size: cover;
-    display:flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    gap:6rem;
+    gap:3rem;
 }
-#acceuil h2{
+#accueil h1{
+    margin-top: 125px;
     color:white;
-    font-size: 2rem;
+    font-size: 3rem;
+    font-family: poppins;
 }
-#acceuil img{
-    width:150px;
+#accueil img{
     color:white;
+}
+#accueil .accueil_flex{
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+    gap:3rem;
+}
+#accueil .catchphrase {
+    width: 100%;
+    font-size: 3.5rem;
+    font-family: poppins;
+    color: #ffffff;
+    text-shadow:
+    0 0 10px #ababab,
+    0 0 42px rgb(150, 190, 138);
+    margin-bottom: 10rem;
+    text-align: center;
+
+}
+
+.down_arrow a.down-arrow{
+    width: 100px;
+    animation: arrow 1s ease-in-out infinite alternate;
+    display: block;
+    margin: auto;
+}
+@keyframes arrow {
+    from {
+        opacity: 1;
+        margin-top: 0;
+    }
+    to {
+        opacity: 0.2;
+        margin-top: 2rem;
+    }
 }
 
 
@@ -149,8 +194,16 @@ header ul li a img{
 }
 #info .wrap{
     display:flex;
+    flex-flow: column;
+    gap:3rem;
+}
+#info .box_info{
+    display:flex;
     justify-content: center;
     gap:2.5rem;
+}
+#info .box_info:nth-child(2n){
+    flex-flow: row-reverse nowrap;
 }
 #info .info_img{
     width:15%
@@ -163,6 +216,36 @@ header ul li a img{
     line-height: 1.25rem;
 }
 
+/*Partie Services*/
+#services{
+    background-color:black;
+    color:white;
+    padding-bottom: 2rem;
+    margin-top:5rem;
+}
+#services .wrap{
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+}
+#services .services_title h2{
+    text-align: center;
+    padding:2rem;
+}
+#services .slider_box{width:80%;}
+#services .flexslider{position:relative;z-index: 1;
+}
+#services .slide_item{
+    z-index:2;
+    position:absolute; margin-left:4rem;
+    display:flex;flex-flow: column;gap:2rem;justify-content: center;align-items: center;
+    background: grey;
+    width:300px;height:481.5px;
+
+}
+#services .slide_item h2,p {
+    padding:1rem;
+}
 
 footer>div {
     justify-content: space-around;
@@ -183,8 +266,9 @@ footer a {
 footer a:hover {
     color: rgba(0,0,0,0.7);
 }
-
 /* INSCRIPTION */
+
+
 #register_form {
     font: 400 13px/1.3 poppins, sans-serif;
     background-image: radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),url("../img/fond-inscription.png");
@@ -228,6 +312,7 @@ footer a:hover {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     transform:translateX(3px);
     transition:0.3s;
+    background-color: #666666;
 }
 #register_form .info_box_button{
     margin-top: 50px;
@@ -267,9 +352,36 @@ footer a:hover {
     color: red;
 }
 
+/*Se connecter*/
+
+#register_form {}
+#register_form h2 {
+    text-align: center;
+}
+
+
+#register_form .info_box_button_insc {
+    padding-top: 30px;
+    text-align: center;
+}
+
+#register_form .miss:hover {
+    color: cornflowerblue;
+
+}
+
+#register_form p {
+    color: darkgrey;
+    padding: 10px 0;
+}
+
 /* DASHBOARD */
-#dashboard_home {
+#dashboard_home .wrap h2:first-of-type {
+    font-size: 2rem;
     text-align: center;
     padding: 2rem 1rem;
-    font-size: 2rem;
+}
+#dashboard_home .graph1 {
+    width: 50%;
+    margin: 2rem auto;
 }

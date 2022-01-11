@@ -38,28 +38,30 @@ if(!empty($_POST['submitted'])) {
     }
 }
 ?>
-
+<link rel="stylesheet" href="asset/css/style.css">
 <section id="register_form">
     <div class="wrap2">
         <form action="" method="post" class="wrapform" novalidate>
-
+        <h2>Connexion</h2>
             <div class="info_box">
                 <label for="login"></label>
                 <input type="text" placeholder="Mail" id="login" name="login" value="<?= recupInputValue('login'); ?>">
                 <span class="error"><?= viewError($errors,'login'); ?></span>
+                <hr>
             </div>
 
             <div class="info_box">
                 <label for="password"></label>
                 <input type="password" placeholder="Mot de passe" id="password" name="password" value="">
                 <span class="error"><?= viewError($errors,'password'); ?></span>
+                <hr>
             </div>
 
-            <div class="info_box_button">
-                <input type="submit" name="submitted" value="SE CONNECTER">
+            <div class="info_box_button_insc">
+                <input type="submit" name="submitted" value="Connexion">
             </div>
             <div>
-                <?php  echo'<a href="mailmissingpassword.php">Mot de passe oublié ?</a>'?>
+                <?php  echo'<a class="miss" href="mailmissingpassword.php">Mot de passe oublié ?</a>'?>
             </div>
 
         </form>

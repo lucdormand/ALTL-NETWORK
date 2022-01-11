@@ -2,7 +2,7 @@
 session_start();
 require('inc/PDO.php');
 require('inc/fonctions.php');
-
+verifUserAlreadyConnected();
 $success=false;
 $errors = [];
 
