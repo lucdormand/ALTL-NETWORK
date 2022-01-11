@@ -122,6 +122,10 @@ header ul li a img{
     width: 30px;
     margin: 5px auto;
 }
+header ul li a p {
+    padding: 5px;
+}
+
 /*header .header_logo {*/
 /*width:200px;*/
 /*}*/
