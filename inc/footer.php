@@ -1,5 +1,6 @@
 <footer class="wrap">
     <div class="flex footer">
+
         <a class="footer_logo" href="index.php">
             <img src="asset/img/Logo_ALTL.png" alt="Logo" class="logo_img">
         </a>
@@ -23,7 +24,7 @@
             </li>
         </ul>
     </div>
-    <p class="copyrights">Copyright placeholder</p>
+    <p class="copyrights">@Copyright placeholder</p>
 </footer>
 
 <script src="https://unpkg.com/scrollreveal"></script>
