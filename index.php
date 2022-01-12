@@ -15,7 +15,7 @@ include('inc/header.php');
         </div>
     </div>
     <div>
-<!--        <img class="img_security"src="asset/img/security.png" alt="">-->
+
         <div class="down_arrow">
             <a class="scroll down-arrow"  href="#info"><img src="asset/img/down-arrow.svg" alt="down-arrow.svg"></a>
         </div>
@@ -84,14 +84,14 @@ include('inc/header.php');
                             <h2>Protection contre attaques en ligne.</h2>
                             <p> ALTL Network propose des services de cybersécurité contre les potentielles attaques en ligne ainsi qu'un moyen de surveillance de son réseau.</p>
                         </div>
-                        <img src="asset/img/slider_1.jpg" />
-                    </li>
+                        <img src="https://i.picsum.photos/id/1/1600/800.jpg?hmac=LXp6QsSJavPlkMiVw9XVNVVgy3EWw2paL3BP0O4iFfs" />
+                    </li>w
                     <li>
                         <div class="slide_item">
                             <h2>Conseils Informatiques</h2>
                             <p>Nous savons qu'il n'est pas toujours facile de se sentir à l'aise lorsque l'on touche à l'informatique, c'est pour cela que nous sommes à l'écoute de vos problèmes et questions lorsque nous travaillons avec nos clients.</p>
                         </div>
-                        <img src="asset/img/slider_2.jpg" />
+                        <img src="https://i.picsum.photos/id/370/1600/800.jpg?hmac=adO6Gk5IcyN1FtjMz_OWTCn60gbln-6zBA4vgkFSdXo" />
                     </li>
                     <li>
 
@@ -99,7 +99,7 @@ include('inc/header.php');
                             <h2>Dépannage Informatique à Distance</h2>
                             <p> Experte de vos solutions informatiques, ALTL Network est aussi capabale de régler vos problèmes à distance de manière sécurisée et efficace </p>
                         </div>
-                        <img src="asset/img/slider_3.jpg" />
+                        <img src="https://i.picsum.photos/id/2/1600/800.jpg?hmac=DxffnWozDEZ2IAf_N_GKli1UZ-XJWa-hlby2bCnttSI" />
                     </li>
                 </ul>
             </div>

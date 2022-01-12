@@ -173,7 +173,7 @@ header ul li a p {
     animation: arrow 1s ease-in-out infinite alternate;
     display: block;
     margin:auto;
-    padding-top: 2rem;
+    padding-top: 20vh;
 }
 @keyframes arrow {
     from {
@@ -240,8 +240,9 @@ header ul li a p {
     position:absolute; margin-left:4rem;
     display:flex;flex-flow: column;gap:2rem;justify-content: center;align-items: center;
     background: grey;
-    width:300px;height:481.5px;
-
+    /*width:300px;height:481.5px;*/
+    height:100%;
+    max-width: 300px;
 }
 #services .slide_item h2,p {
     padding:1rem;
