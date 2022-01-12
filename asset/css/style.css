@@ -45,6 +45,13 @@ a {
 .sb {justify-content: space-between}
 .relative {position: relative}
 .absolute {position: absolute}
+.separator {
+    background-color: rgba(0,0,0,0.2);
+    width: 116px;
+    height: 3px;
+    border-radius: 2px;
+    margin: 1rem auto;
+}
 
 
 
@@ -384,4 +391,47 @@ footer a:hover {
 #dashboard_home .graph1 {
     width: 50%;
     margin: 2rem auto;
+}
+
+
+
+
+
+/* DASHBOARD LOGS DETAILS */
+
+.red {
+    color: #FF0000!important;
+}
+
+.img_status {
+    height: 32px;
+    width: auto;
+}
+.dashboard_title {
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 2.5rem;
+}
+.details_table {
+    width: 100%;
+    padding: 2rem 1rem;
+}
+.details_table tr td {
+    text-align: center;
+}
+
+.logs_list {
+    width: 30%;
+    min-width: 500px;
+    background-color: black;
+    padding: 2rem;
+    margin: 3rem auto 2rem auto;
+}
+.logs_list li {
+    text-align: center;
+    padding: 10px 0;
+}
+.logs_list li a {
+    color: white;
+
 }
