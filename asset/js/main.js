@@ -136,6 +136,8 @@ $(document).ready(function () {
                     console.log('ajaxD3 ok')
                     console.log(count_total)
 
+                    const dif = ([count_total[0]["COUNT(*)"]] - [count_timeout[0]["COUNT(*)"]]);
+
                     const data = {
                         labels: [
                             'Timeout',
@@ -143,7 +145,7 @@ $(document).ready(function () {
                         ],
                         datasets: [{
                             label: 'Trame(s) échouée(s)',
-                            data: [[count_timeout[0]["COUNT(*)"]], [count_total[0]["COUNT(*)"]]],
+                            data: [[count_timeout[0]["COUNT(*)"]], dif],
                             backgroundColor: [
                                 'rgb(186,13,50)',
                                 'rgb(181,242,149)',
@@ -213,6 +215,7 @@ $(document).ready(function () {
                     console.log('ajaxD3 ok')
                     console.log(count_total)
 
+                    const dif = ([count_total[0]["COUNT(*)"]] - [count_protocol_checksum_status[0]["COUNT(*)"]]);
                     const data = {
                         labels: [
                             'Disabled',
@@ -220,7 +223,7 @@ $(document).ready(function () {
                         ],
                         datasets: [{
                             label: 'Perte(s) d\'intégrité des données',
-                            data: [[count_protocol_checksum_status[0]["COUNT(*)"]], [count_total[0]["COUNT(*)"]]],
+                            data: [[count_protocol_checksum_status[0]["COUNT(*)"]], dif],
                             backgroundColor: [
                                 'rgb(186,13,50)',
                                 'rgb(181,242,149)',
