@@ -23,13 +23,13 @@ $onDashboard = false;
             </a>
             <ul class="flex sb">
                 <li>
-                    <a href="#accueil">
+                    <a href="index.php#accueil">
                         <img src="./asset/img/home.png" alt="">
                         <p>Accueil</p>
                     </a>
                 </li>
                 <li>
-                    <a href="#info">
+                    <a href="index.php#info">
                         <img src="./asset/img/about_menu.png" alt="">
                         <p>A propos</p>
                     </a>
