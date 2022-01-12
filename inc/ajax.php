@@ -26,8 +26,8 @@ foreach ($_POST['data'] as $key => $value) {
     $protocol_type = $_POST['data'][$i]['protocol']['type'];
     $protocol_code = $_POST['data'][$i]['protocol']['code'];
     $headerchecksum = $_POST['data'][$i]['headerChecksum'];
-    $ip_from = $_POST['data'][$i]['ip']['from'];
-    $ip_dest = $_POST['data'][$i]['ip']['dest'];
+    $ip_from = long2ip(hexdec($_POST['data'][$i]['ip']['from']));
+    $ip_dest = long2ip(hexdec($_POST['data'][$i]['ip']['dest']));
 
     $sql = "SELECT COUNT(*) FROM `trames` WHERE identification = :identification";
     $query = $pdo ->prepare($sql);
