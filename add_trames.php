@@ -11,5 +11,4 @@ include('inc/header.php');
 
 <?php
 
-debug($_POST);
 include('inc/footer.php');
