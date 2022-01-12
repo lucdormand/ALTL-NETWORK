@@ -48,5 +48,5 @@ Thumbs.db
 *.mov
 *.wmv
 
-inc/config.php
+/inc/config.php
 

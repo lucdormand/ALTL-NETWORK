@@ -33,6 +33,7 @@ sr.reveal('.wrap2',{
 
 
 //CHARTS
+if (window.location.href.includes("dashboard") || window.location.href.includes("add"))  {
 $(document).ready(function () {
     $.ajax({
         type: "POST",
@@ -42,6 +43,7 @@ $(document).ready(function () {
         },
         dataType: "json",
         success: function (total_count) {
+            console.log(window.location.href)
             console.log('ajaxD ok')
             console.log(total_count)
             $.each(total_count, function(i) {
@@ -263,7 +265,7 @@ $(document).ready(function () {
             })
         }
     })
-})
+})}
 
 // NON TERMINE
 // $(document).ready(function () {

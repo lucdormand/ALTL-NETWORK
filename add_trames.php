@@ -10,5 +10,5 @@ include('inc/header.php');
 
 
 <?php
-
+header("Location: dashboard.php");
 include('inc/footer.php');
