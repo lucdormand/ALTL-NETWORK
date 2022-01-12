@@ -29,41 +29,67 @@ sr.reveal('.wrap2',{
 
 });
 
-$(document).ready(function () {
-    const data = {
-        labels: [
-            'Red',
-            'Green',
-            'Yellow',
-            'Grey',
-            'Blue'
-        ],
-        datasets: [{
-            label: 'My First Dataset',
-            data: [11, 16, 7, 3, 14],
-            backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(75, 192, 192)',
-                'rgb(255, 205, 86)',
-                'rgb(201, 203, 207)',
-                'rgb(54, 162, 235)'
-            ]
-        }]
-    };
 
-    const config = {
-        type: 'polarArea',
-        data: data,
-        options: {
-            responsive: true,
+
+
+//CHARTS
+$(document).ready(function () {
+    $.ajax({
+        type: "POST",
+        url: "inc/ajaxdash.php",
+        data: {
+            data: 'count'
+        },
+        dataType: "json",
+        success: function (total_count) {
+            console.log('ajaxD ok')
+            console.log(total_count)
+            $.each(total_count, function(i) {
+                window["count_" + total_count[i]["protocol_name"].replace('.','')] = total_count[i]["COUNT(*)"]
+                console.log("count_" + total_count[i]["protocol_name"].replace('.',''))
+            });
+
+
+
+            const data = {
+                labels: [
+                    'Red',
+                    'Green',
+                    'Yellow',
+                    'Grey',
+                    'Blue'
+                ],
+                datasets: [{
+                    label: 'My First Dataset',
+                    data: [count_ICMP, count_UDP, count_TCP, count_TLSv12],
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(75, 192, 192)',
+                        'rgb(255, 205, 86)',
+                        'rgb(201, 203, 207)',
+                        'rgb(54, 162, 235)'
+                    ]
+                }]
+            };
+
+            const config = {
+                type: 'polarArea',
+                data: data,
+                options: {
+                    responsive: true,
+                }
+            };
+            const myChart = new Chart(
+                document.querySelector('#graph1'),
+                config
+            );
+
         }
-    };
-    const myChart = new Chart(
-        document.querySelector('#graph1'),
-        config
-    );
-    console.log(myChart)
+    })
 })
+
+
+
 $(function() {
     var words = [
             'CHEZ ALTL NETWORK',
@@ -112,29 +138,7 @@ $('.testsAjax').ready(function ()  {
     })
 })
 
-$('.testsAjaxLogs').ready(function ()  {
 
-    $.ajax({
-        type: "POST",
-        url: "asset/json/frames.json",
-        success: function(response) {
-            $.ajax({
-                type: "POST",
-                url: "inc/ajaxlogs.php",
-                // contentType: "application/json",
-                dataType: "json",
-                data: {
-                    data:response
-                },
-                success: function (response) {
-                    // console.log(response)
-                    console.log('ajax1 ok')
-                    $.each(response.data, function (i) {
-                        console.log(response.data[i])
-                        console.log('ajax1 ok')
-                    })
-                }
-            })
-        }
-    })
-})
+
+
+
