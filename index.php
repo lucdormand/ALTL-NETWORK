@@ -1,5 +1,4 @@
 <?php
-session_start();
 require('inc/fonctions.php');
 require('inc/PDO.php');
 include('inc/header.php');

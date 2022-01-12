@@ -1,10 +1,10 @@
 <?php
 
-session_start();
+
 require('inc/PDO.php');
 require('inc/fonctions.php');
 
-include('inc/header.php') ?>
+include('inc/headerdashboard.php') ?>
 
 <section id="dashboard_home">
     <div class="wrap">

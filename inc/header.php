@@ -1,5 +1,6 @@
 <?php
 $onDashboard = false;
+session_start();
 ?>
 <!doctype html>
 <html lang="fr">

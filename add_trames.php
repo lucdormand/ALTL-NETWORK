@@ -1,7 +1,7 @@
 <?php
 require('inc/fonctions.php');
 require('inc/PDO.php');
-include('inc/header.php');
+include('inc/headerdashboard.php');
 
 ?>
 

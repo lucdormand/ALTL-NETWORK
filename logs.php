@@ -13,7 +13,7 @@ $trames = $query->fetchAll();
 //debug($trames);
 
 
-include('inc/header.php');
+include('inc/headerdashboard.php');
 
 
 ?>

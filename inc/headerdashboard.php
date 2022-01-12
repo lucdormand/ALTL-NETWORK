@@ -1,5 +1,9 @@
 <?php
+session_start();
 $onDashboard = false;
+if (!isLogged()) {
+    header("Location: index.php");
+}
 ?>
 <!doctype html>
 <html lang="fr">
@@ -12,14 +16,14 @@ $onDashboard = false;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Poppins:ital,wght@0,400;0,700;1,100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="asset/flexslider/flexslider.css" type="text/css">
+    <link rel="stylesheet" href="../asset/flexslider/flexslider.css" type="text/css">
     <link rel="stylesheet" href="asset\css\style.css">
 </head>
 <body>
 <header class="wrap">
     <div class="flex sb">
-        <a class="header_logo" href="index.php">
-            <img src="asset/img/Logo_ALTL.png" width="300" height="140" alt="Logo" class="logo_img" >
+        <a class="header_logo" href="/index.php">
+            <img src="./asset/img/Logo_ALTL.png" width="300" height="140" alt="Logo" class="logo_img" >
         </a>
         <ul class="flex sb">
             <li>
@@ -29,7 +33,7 @@ $onDashboard = false;
                 </a>
             </li>
             <li>
-                <a href="index.php">
+                <a href="logs.php">
                     <img src="./asset/img/dashboard-graphique.png" alt="">
                     <p>Logs</p>
                 </a>
@@ -55,7 +59,7 @@ $onDashboard = false;
             </div>
         <?php } else {?>
             <div class="logoutBtn">
-                <a href="logout.php">Se déconnecter</a>
+                <a href="./logout.php">Se déconnecter</a>
             </div>
         <?php } ?>
     </div>
