@@ -34,241 +34,314 @@ sr.reveal('.wrap2',{
 
 //CHARTS
 if (window.location.href.includes("dashboard") || window.location.href.includes("add"))  {
-$(document).ready(function () {
-    $.ajax({
-        type: "POST",
-        url: "inc/ajaxdash.php",
-        data: {
-            data: 'count'
-        },
-        dataType: "json",
-        success: function (total_count) {
-            console.log(window.location.href)
-            console.log('ajaxD ok')
-            console.log(total_count)
-            $.each(total_count, function(i) {
-                window["count_" + total_count[i]["protocol_name"].replace('.','')] = total_count[i]["COUNT(*)"]
-                console.log("count_" + total_count[i]["protocol_name"].replace('.',''))
-            });
+    $(document).ready(function () {
+        $.ajax({
+            type: "POST",
+            url: "inc/ajaxdash.php",
+            data: {
+                data: 'count'
+            },
+            dataType: "json",
+            success: function (total_count) {
+                console.log(window.location.href)
+                console.log('ajaxD ok')
+                console.log(total_count)
+
+                //TROUVE LE NOMBRE DE TRAMES DE CHAQUE TYPE
+                $.each(total_count, function(i) {
+                    window["count_" + total_count[i]["protocol_name"].replace('.','')] = total_count[i]["COUNT(*)"]
+                    console.log("count_" + total_count[i]["protocol_name"].replace('.',''))
+                });
+                var total_trames = 0
+
+                //TROUVE LE TOTAL DES TRAMES POUR POURCENTAGES
+                $.each(total_count, function(i) {
+                    total_trames = total_trames + parseInt(total_count[i]["COUNT(*)"])
+                    console.log(total_trames)
+                });
+
+                const data = {
+                    labels: [
+                        'ICMP',
+                        'UDP',
+                        'TCP',
+                        'TLSv1.2'
+                    ],
+                    datasets: [{
+                        label: 'Total des trames',
+                        data: [count_ICMP, count_UDP, count_TCP, count_TLSv12],
+                        backgroundColor: [
+                            'rgb(181,242,149)',
+                            'rgb(169,250,236)',
+                            'rgb(190,169,250)',
+                            'rgb(243,129,15)'
+                        ]
+                    }]
+                };
 
 
+                function hoverLegend(){
 
-            const data = {
-                labels: [
-                    'ICMP',
-                    'UDP',
-                    'TCP',
-                    'TLSv1.2'
-                ],
-                datasets: [{
-                    label: 'Total des trames',
-                    data: [count_ICMP, count_UDP, count_TCP, count_TLSv12],
-                    backgroundColor: [
-                        'rgb(181,242,149)',
-                        'rgb(169,250,236)',
-                        'rgb(190,169,250)',
-                        'rgb(243,129,15)'
-                    ]
-                }]
-            };
+                }
 
-            function hoverLegend(){
-
-            }
-
-            const config = {
-                type: 'polarArea',
-                data: data,
-                options: {
-                    responsive: true,
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: 'Les Protocoles',
-                            font: {
-                                size: 20,
-                                family: 'Arvo',
-                            },
-                        },
-                        legend: {
-                            display: true,
-                            onHover: hoverLegend,
-                            labels: {
+                const config = {
+                    type: 'polarArea',
+                    data: data,
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Les Protocoles',
                                 font: {
-                                    size: 10,
-                                    family: 'Poppins',
-                                    weight: 700
+                                    size: 20,
+                                    family: 'Arvo',
+                                },
+                            },
+                            legend: {
+                                display: true,
+                                onHover: hoverLegend,
+                                labels: {
+                                    font: {
+                                        size: 10,
+                                        family: 'Poppins',
+                                        weight: 700
+                                    }
                                 }
                             }
                         }
                     }
+                };
+                const myChart = new Chart(
+                    document.querySelector('#graph1'),
+                    config
+                );
+
+                const dataP = {
+                    labels: [
+                        'ICMP',
+                        'UDP',
+                        'TCP',
+                        'TLSv1.2'
+                    ],
+                    datasets: [{
+                        label: 'Total des trames',
+                        data: [Math.round(count_ICMP*100/total_trames), Math.round(count_UDP*100/total_trames), Math.round(count_TCP*100/total_trames), Math.round(count_TLSv12*100/total_trames)],
+                        backgroundColor: [
+                            'rgb(181,242,149)',
+                            'rgb(169,250,236)',
+                            'rgb(190,169,250)',
+                            'rgb(243,129,15)'
+                        ]
+                    }]
+                };
+
+
+                function hoverLegend(){
+
                 }
-            };
-            const myChart = new Chart(
-                document.querySelector('#graph1'),
-                config
-            );
 
-        }
-    })
-})
-
-$(document).ready(function () {
-    $.ajax({
-        type: "POST",
-        url: "inc/ajaxdash2.php",
-        data: {
-            data: 'count'
-        },
-        dataType: "json",
-        success: function (count_timeout) {
-            console.log('ajaxD2 ok')
-            console.log(count_timeout[0])
-
-            $.ajax({
-                type: "POST",
-                url: "inc/ajaxdash3.php",
-                data: {
-                    data: 'count'
-                },
-                dataType: "json",
-                success: function (count_total) {
-                    console.log('ajaxD3 ok')
-                    console.log(count_total)
-
-                    const dif = ([count_total[0]["COUNT(*)"]] - [count_timeout[0]["COUNT(*)"]]);
-
-                    const data = {
-                        labels: [
-                            'Timeout',
-                            'OK'
-                        ],
-                        datasets: [{
-                            label: 'Trame(s) échouée(s)',
-                            data: [[count_timeout[0]["COUNT(*)"]], dif],
-                            backgroundColor: [
-                                'rgb(186,13,50)',
-                                'rgb(181,242,149)',
-                            ]
-                        }]
-                    };
-
-                    const config = {
-                        type: 'bar',
-                        data: data,
-                        options: {
-                            responsive: true,
-                            plugins: {
-                                title: {
-                                    display: true,
-                                    text: 'Taux de requêtes échouées',
-                                    font: {
-                                        size: 20,
-                                        family: 'Arvo',
-                                    },
+                const configP = {
+                    type: 'pie',
+                    data: dataP,
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Les Protocoles (en pourcentages)',
+                                font: {
+                                    size: 20,
+                                    family: 'Arvo',
                                 },
-                                legend: {
-                                    display: true,
-                                    labels: {
-                                        font: {
-                                            size: 10,
-                                            family: 'Poppins',
-                                            weight: 700
-                                        }
+                            },
+
+                            legend: {
+                                display: true,
+                                onHover: hoverLegend,
+                                labels: {
+                                    font: {
+                                        size: 10,
+                                        family: 'Poppins',
+                                        weight: 700
                                     }
                                 }
                             }
-
                         }
-                    };
-                    const myChart = new Chart(
-                        document.querySelector('#graph2'),
-                        config
-                    );
+                    }
+                };
+                const myChartP = new Chart(
+                    document.querySelector('#graph1P'),
+                    configP
+                );
 
-                }
-            })
-        }
+            }
+        })
     })
-})
 
-$(document).ready(function () {
-    $.ajax({
-        type: "POST",
-        url: "inc/ajaxdash4.php",
-        data: {
-            data: 'count'
-        },
-        dataType: "json",
-        success: function (count_protocol_checksum_status) {
-            console.log('ajaxD4 ok')
-            console.log(count_protocol_checksum_status[0])
+    $(document).ready(function () {
+        $.ajax({
+            type: "POST",
+            url: "inc/ajaxdash2.php",
+            data: {
+                data: 'count'
+            },
+            dataType: "json",
+            success: function (count_timeout) {
+                console.log('ajaxD2 ok')
+                console.log(count_timeout[0])
 
-            $.ajax({
-                type: "POST",
-                url: "inc/ajaxdash3.php",
-                data: {
-                    data: 'count'
-                },
-                dataType: "json",
-                success: function (count_total) {
-                    console.log('ajaxD3 ok')
-                    console.log(count_total)
+                $.ajax({
+                    type: "POST",
+                    url: "inc/ajaxdash3.php",
+                    data: {
+                        data: 'count'
+                    },
+                    dataType: "json",
+                    success: function (count_total) {
+                        console.log('ajaxD3 ok')
+                        console.log(count_total)
 
-                    const dif = ([count_total[0]["COUNT(*)"]] - [count_protocol_checksum_status[0]["COUNT(*)"]]);
-                    const data = {
-                        labels: [
-                            'Disabled',
-                            'Good'
-                        ],
-                        datasets: [{
-                            label: 'Perte(s) d\'intégrité des données',
-                            data: [[count_protocol_checksum_status[0]["COUNT(*)"]], dif],
-                            backgroundColor: [
-                                'rgb(186,13,50)',
-                                'rgb(181,242,149)',
-                            ]
-                        }]
-                    };
+                        const dif = ([count_total[0]["COUNT(*)"]] - [count_timeout[0]["COUNT(*)"]]);
 
-                    const config = {
-                        type: 'bar',
-                        data: data,
-                        options: {
-                            responsive: true,
-                            plugins: {
-                                title: {
-                                    display: true,
-                                    text: 'Taux d\'intégrité des données',
-                                    font: {
-                                        size: 20,
-                                        family: 'Arvo',
-                                    },
-                                },
-                                legend: {
-                                    display: true,
-                                    labels: {
+                        const data = {
+                            labels: [
+                                'Timeout',
+                                'OK'
+                            ],
+                            datasets: [{
+                                label: 'Trame(s) échouée(s)',
+                                data: [[count_timeout[0]["COUNT(*)"]], dif],
+                                backgroundColor: [
+                                    'rgb(186,13,50)',
+                                    'rgb(181,242,149)',
+                                ]
+                            }]
+                        };
+
+                        const config = {
+                            type: 'bar',
+                            data: data,
+                            options: {
+                                responsive: true,
+                                plugins: {
+                                    title: {
+                                        display: true,
+                                        text: 'Taux de requêtes échouées',
                                         font: {
-                                            size: 10,
-                                            family: 'Poppins',
-                                            weight: 700
+                                            size: 20,
+                                            family: 'Arvo',
+                                        },
+                                    },
+                                    legend: {
+                                        display: true,
+                                        labels: {
+                                            font: {
+                                                size: 10,
+                                                family: 'Poppins',
+                                                weight: 700
+                                            }
                                         }
                                     }
                                 }
+
                             }
+                        };
+                        const myChart = new Chart(
+                            document.querySelector('#graph2'),
+                            config
+                        );
 
-                        }
-                    };
-                    const myChart = new Chart(
-                        document.querySelector('#graph3'),
-                        config
-                    );
-
-                }
-            })
-        }
+                    }
+                })
+            }
+        })
     })
-})}
+
+    $(document).ready(function () {
+        $.ajax({
+            type: "POST",
+            url: "inc/ajaxdash4.php",
+            data: {
+                data: 'count'
+            },
+            dataType: "json",
+            success: function (count_protocol_checksum_status) {
+                console.log('ajaxD4 ok')
+                console.log(count_protocol_checksum_status[0])
+
+                $.ajax({
+                    type: "POST",
+                    url: "inc/ajaxdash3.php",
+                    data: {
+                        data: 'count'
+                    },
+                    dataType: "json",
+                    success: function (count_total) {
+                        console.log('ajaxD3 ok')
+                        console.log(count_total)
+
+                        const dif = ([count_total[0]["COUNT(*)"]] - [count_protocol_checksum_status[0]["COUNT(*)"]]);
+                        const data = {
+                            labels: [
+                                'Disabled',
+                                'Good'
+                            ],
+                            datasets: [{
+                                label: 'Perte(s) d\'intégrité des données',
+                                data: [[count_protocol_checksum_status[0]["COUNT(*)"]], dif],
+                                backgroundColor: [
+                                    'rgb(186,13,50)',
+                                    'rgb(181,242,149)',
+                                ]
+                            }]
+                        };
+
+                        const config = {
+                            type: 'bar',
+                            data: data,
+                            options: {
+                                responsive: true,
+                                plugins: {
+                                    title: {
+                                        display: true,
+                                        text: 'Taux d\'intégrité des données',
+                                        font: {
+                                            size: 20,
+                                            family: 'Arvo',
+                                        },
+                                    },
+                                    legend: {
+                                        display: true,
+                                        labels: {
+                                            font: {
+                                                size: 10,
+                                                family: 'Poppins',
+                                                weight: 700
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+                        };
+                        const myChart = new Chart(
+                            document.querySelector('#graph3'),
+                            config
+                        );
+
+                    }
+                })
+            }
+        })
+    })
+
+    $(".dashboardBtn").click(function () {
+        $(".graph1Nb").toggle()
+        $(".graph1Percent").toggle()
+    })
+
+}
 
 // NON TERMINE
 // $(document).ready(function () {
