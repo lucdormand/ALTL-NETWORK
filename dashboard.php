@@ -12,6 +12,17 @@ include('inc/header.php') ?>
         <div class="graph1">
             <canvas id="graph1"></canvas>
         </div>
+        <div class="container_two_graphs">
+            <div class="graph2">
+                <canvas id="graph2"></canvas>
+            </div>
+            <div class="graph3">
+                <canvas id="graph3"></canvas>
+            </div>
+        </div>
+        <div class="graph4">
+            <canvas id="graph4"></canvas>
+        </div>
     </div>
 </section>
 <?php

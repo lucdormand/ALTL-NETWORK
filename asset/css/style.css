@@ -392,6 +392,13 @@ footer a:hover {
     width: 50%;
     margin: 2rem auto;
 }
+#dashboard_home .container_two_graphs {
+    display: flex;
+    flex-flow: row nowrap;
+}
+#dashboard_home .container_two_graphs .graph2, #dashboard_home .container_two_graphs .graph3 {
+    width: 50%;
+}
 
 
 
