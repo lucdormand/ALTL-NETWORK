@@ -520,6 +520,26 @@ footer .sprite4:hover {
     padding: .4rem;
 }
 
+/* Trames */
+.protocols {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+.btn_trames {
+    padding: 1rem 1.5rem;
+    background-color: #2C2C2C;
+    color: white;
+    font-weight: 700;
+}
+.btn_trames:hover {
+    border: 2px solid #2C2C2C;
+    color: #2C2C2C;
+    background: none;
+}
 
 /* Bulle INFO, WARNING, DANGER, SUCCESS */
 .bulle {
