@@ -189,7 +189,7 @@ if (window.location.href.includes("dashboard") || window.location.href.includes(
             dataType: "json",
             success: function (count_timeout) {
                 console.log('ajaxD2 ok')
-                console.log(count_timeout[0])
+                console.log(parseInt(count_timeout[0]['COUNT(*)']));
 
                 $.ajax({
                     type: "POST",
@@ -203,7 +203,7 @@ if (window.location.href.includes("dashboard") || window.location.href.includes(
                         console.log(count_total)
 
                         const dif = ([count_total[0]["COUNT(*)"]] - [count_timeout[0]["COUNT(*)"]]);
-
+                        const a = parseInt(count_timeout[0]['COUNT(*)']);
                         const data = {
                             labels: [
                                 'Timeout',
@@ -211,7 +211,7 @@ if (window.location.href.includes("dashboard") || window.location.href.includes(
                             ],
                             datasets: [{
                                 label: 'Trame(s) échouée(s)',
-                                data: [[count_timeout[0]["COUNT(*)"]], dif],
+                                data: [a, dif],
                                 backgroundColor: [
                                     'rgb(186,13,50)',
                                     'rgb(181,242,149)',
@@ -282,6 +282,7 @@ if (window.location.href.includes("dashboard") || window.location.href.includes(
                         console.log(count_total)
 
                         const dif = ([count_total[0]["COUNT(*)"]] - [count_protocol_checksum_status[0]["COUNT(*)"]]);
+                        const a = parseInt(count_protocol_checksum_status[0]['COUNT(*)'])
                         const data = {
                             labels: [
                                 'Disabled',
@@ -289,7 +290,7 @@ if (window.location.href.includes("dashboard") || window.location.href.includes(
                             ],
                             datasets: [{
                                 label: 'Perte(s) d\'intégrité des données',
-                                data: [[count_protocol_checksum_status[0]["COUNT(*)"]], dif],
+                                data: [a, dif],
                                 backgroundColor: [
                                     'rgb(186,13,50)',
                                     'rgb(181,242,149)',
