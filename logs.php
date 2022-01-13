@@ -37,9 +37,9 @@ include('inc/headerdashboard.php');
     <?php
     foreach ($trames as $trame) {
         if ($trame['status'] == 'timeout') {
-            echo '<li><a title="Accédez au détail de cette trame" href="details.php?id='.$trame['id'].'" class="red">Trame '.$trame['protocol_name'].' venant de '.$trame['ip_from'].' vers '.$trame['ip_dest'].'</a></li>';
+            echo '<li><a title="Accédez au détail de cette trame" href="details.php?id='.$trame['id'].'" class="red">'.date("d/m/Y", strtotime($trame['date']));?> à <?=date("H:i:s", strtotime($trame['date'])).' :<br>Trame '.$trame['protocol_name'].' venant de '.$trame['ip_from'].' vers '.$trame['ip_dest'].'</a></li>';
         } else {
-            echo '<li><a title="Accédez au détail de cette trame" href="details.php?id='.$trame['id'].'">Trame '.$trame['protocol_name'].' venant de '.$trame['ip_from'].' vers '.$trame['ip_dest'].'</a></li>';
+            echo '<li><a title="Accédez au détail de cette trame" href="details.php?id='.$trame['id'].'">'.date("d/m/Y", strtotime($trame['date']));?> à <?=date("H:i:s", strtotime($trame['date'])).' :<br>Trame '.$trame['protocol_name'].' venant de '.$trame['ip_from'].' vers '.$trame['ip_dest'].'</a></li>';
         }
 
     }

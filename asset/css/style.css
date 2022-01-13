@@ -518,7 +518,7 @@ footer .sprite4:hover {
 }
 .logs_list li a:hover {
     background-color: #2C2C2C;
-    padding: .4rem;
+    outline: .4rem solid #2C2C2C;
 }
 
 /* Trames */

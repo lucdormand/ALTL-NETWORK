@@ -336,10 +336,18 @@ if (window.location.href.includes("dashboard") || window.location.href.includes(
             }
         })
     })
-
+    let percentage = 0
     $(".dashboardBtn").click(function () {
         $(".graph1Nb").toggle()
         $(".graph1Percent").toggle()
+        if (percentage == 0) {
+            $(".dashboardBtn p").html("Voir en nombres absolus")
+            percentage = 1
+        } else {
+            $(".dashboardBtn p").html("Voir en pourcentages")
+            percentage = 0
+        }
+
     })
 
 }

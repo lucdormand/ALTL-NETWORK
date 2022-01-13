@@ -59,13 +59,13 @@ include('inc/headerdashboard.php');
 <?php if ($trameCurrent['status'] == 'timeout') {
   echo '<div class="bulle danger">
         <span><i class="fas fa-exclamation-circle"></i> Echec</span>
-        <p>Cette trame n\'a pas aboutie à un succès !</p>
+        <p>Cette trame n\'a pas abouti à un succès !</p>
     </div>';
 
 } else {
     echo '<div class="bulle success">
         <span><i class="fas fa-check-circle"></i> Succès</span>
-        <p>Cette trame a aboutie à un succès !</p>
+        <p>Cette trame a abouti à un succès !</p>
     </div>';
 }
 ?>
