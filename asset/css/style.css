@@ -255,6 +255,7 @@ header ul li a p {
     padding:1rem;
 }
 
+/*FOOTER*/
 footer>div {
     justify-content: space-around;
 }
@@ -274,6 +275,60 @@ footer a {
 footer a:hover {
     color: rgba(0,0,0,0.7);
 }
+
+footer .bottom_footer{
+    display:flex;
+    justify-content: space-between;
+}
+footer .icons{
+    display:flex;
+    gap:0.20rem;
+    /*width:20%*/
+}
+footer .sprite1 {
+    background: url('../img/social_icons.png') no-repeat 0 0;
+    width: 46px;
+    height: 46px;
+}
+footer .sprite1:hover{
+    background: url('../img/social_icons.png') no-repeat 0 -47px;
+    width: 46px;
+    height: 46px;
+}
+
+footer .sprite2 {
+    background: url('../img/social_icons.png') no-repeat -52px 0;
+    width: 46px;
+    height: 46px;
+}
+footer .sprite2:hover{
+    background: url('../img/social_icons.png') no-repeat -52px -47px;
+    width: 46px;
+    height: 46px;
+}
+footer .sprite3 {
+    background: url('../img/social_icons.png') no-repeat -104px 0;
+    width: 46px;
+    height: 46px;
+}
+footer .sprite3:hover{
+    background: url('../img/social_icons.png') no-repeat -104px -47px;
+    width: 46px;
+    height: 46px;
+}
+footer .sprite4 {
+    background: url('../img/social_icons.png') no-repeat -156px 0;
+    width: 46px;
+    height: 46px;
+}
+footer .sprite4:hover {
+    background: url('../img/social_icons.png') no-repeat -156px -47px;
+    width: 46px;
+    height: 46px;
+}
+
+
+
 /* INSCRIPTION */
 
 

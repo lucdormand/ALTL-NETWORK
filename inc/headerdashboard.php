@@ -23,25 +23,25 @@ if (!isLogged()) {
 <header class="wrap">
     <div class="flex sb">
         <a class="header_logo" href="/index.php">
-            <img src="./asset/img/Logo_ALTL.png" width="300" height="140" alt="Logo" class="logo_img" >
+            <img src="asset/img/Logo_ALTL.png" width="300" height="140" alt="Logo" class="logo_img" >
         </a>
         <ul class="flex sb">
             <li>
                 <a href="index.php">
-                    <img src="./asset/img/home.png" alt="">
+                    <img src="asset/img/home.png" alt="">
                     <p>Accueil</p>
                 </a>
             </li>
             <li>
                 <a href="logs.php">
-                    <img src="./asset/img/dashboard-graphique.png" alt="">
+                    <img src="asset/img/dashboard-graphique.png" alt="">
                     <p>Logs</p>
                 </a>
             </li>
             <?php if (isLogged()) { ?>
                 <li>
                     <a href="dashboard.php">
-                        <img src="./asset/img/member-card.png" alt="">
+                        <img src="asset/img/member-card.png" alt="">
                         <p>Tableau de bord</p>
                     </a>
                 </li>

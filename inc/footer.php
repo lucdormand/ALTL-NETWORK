@@ -4,6 +4,16 @@
         <a class="footer_logo" href="index.php">
             <img src="asset/img/Logo_ALTL.png" alt="Logo" class="logo_img">
         </a>
+
+        <div class="social_icons">
+            <p>Nos réseaux</p>
+            <div class="icons">
+                <a href="#"><div class="sprite1"></div></a>
+                <a href="#"><div class="sprite2"></div></a>
+                <a href="#"><div class="sprite3"></div></a>
+                <a href="#"><div class="sprite4"></div></a>
+            </div>
+        </div>
         <ul>
             <li>
                 <a href="#accueil">Accueil</a>
@@ -24,7 +34,7 @@
             </li>
         </ul>
     </div>
-    <p class="copyrights">@Copyright placeholder</p>
+            <p class="copyrights">@Copyright placeholder</p>
 </footer>
 
 <script src="https://unpkg.com/scrollreveal"></script>
