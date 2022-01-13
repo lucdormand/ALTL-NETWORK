@@ -460,6 +460,7 @@ footer .sprite4:hover {
     margin: 2rem auto;
 }
 #dashboard_home .container_two_graphs {
+    padding-top: 6rem;
     display: flex;
     flex-flow: row nowrap;
 }

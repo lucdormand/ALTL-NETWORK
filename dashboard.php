@@ -3,6 +3,10 @@
 
 require('inc/PDO.php');
 require('inc/fonctions.php');
+$sql2 = "SELECT DISTINCT protocol_name FROM trames";
+$query = $pdo->prepare($sql2);
+$query->execute();
+$trames = $query->fetchAll();
 
 include('inc/headerdashboard.php') ?>
 
@@ -19,6 +23,11 @@ include('inc/headerdashboard.php') ?>
         <div class="graph1 graph1Percent" style="display: none">
             <canvas id="graph1P"></canvas>
         </div>
+        <ul class="protocols">
+            <?php foreach ($trames as $trame) { ?>
+                <li><a class="btn_trames" target="_blank" title="Accédez à toutes les trames du protocol <?= $trame['protocol_name']?>" href="trames.php?protocol=<?= $trame['protocol_name'] ?>"><?= $trame['protocol_name'] ?></a></li>
+            <?php } ?>
+        </ul>
 
         <div class="container_two_graphs">
             <div class="graph2">

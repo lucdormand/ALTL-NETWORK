@@ -30,7 +30,7 @@ include('inc/headerdashboard.php');
 <div class="separator"></div>
 <ul class="protocols">
     <?php foreach ($trames as $trame) { ?>
-        <li><a class="btn_trames" href="trames.php?protocol=<?= $trame['protocol_name'] ?>"><?= $trame['protocol_name'] ?></a></li>
+        <li><a class="btn_trames" target="_blank" title="Accédez à toutes les trames du protocol <?= $trame['protocol_name']?>" href="trames.php?protocol=<?= $trame['protocol_name'] ?>"><?= $trame['protocol_name'] ?></a></li>
     <?php } ?>
 </ul>
 <table class="details_table wrap">

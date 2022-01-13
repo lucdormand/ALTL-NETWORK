@@ -11,7 +11,10 @@ $query->execute();
 $trames = $query->fetchAll();
 
 //debug($trames);
-
+$sql2 = "SELECT DISTINCT protocol_name FROM trames";
+$query = $pdo->prepare($sql2);
+$query->execute();
+$trames2 = $query->fetchAll();
 
 include('inc/headerdashboard.php');
 
@@ -24,6 +27,11 @@ include('inc/headerdashboard.php');
         <span><i class="fas fa-info-circle"></i> Information</span>
         <p>Sur cette page, vous pouvez voir l'ensemble des activités avec diverses informations comme les adresses IP, l'horodatage de chaque trame.</p>
     </div>
+    <ul class="protocols">
+        <?php foreach ($trames2 as $trame) { ?>
+            <li><a class="btn_trames" target="_blank" title="Accédez à toutes les trames du protocol <?= $trame['protocol_name']?>" href="trames.php?protocol=<?= $trame['protocol_name'] ?>"><?= $trame['protocol_name'] ?></a></li>
+        <?php } ?>
+    </ul>
 
 <ul class="logs_list">
     <?php
