@@ -27,10 +27,11 @@ if (!isLogged()) {
             <img src="asset/img/Logo_ALTL.png" width="300" height="140" alt="Logo" class="logo_img" >
         </a>
         <ul class="flex sb">
+
             <?php if (isLogged()) { ?>
                 <li>
                     <a href="dashboard.php">
-                        <img src="./asset/img/sec.png" alt="">
+                        <img src="./asset/img/dashboard-graphique.png" alt="">
                         <p>Tableau de bord</p>
                     </a>
                 </li>
@@ -43,7 +44,7 @@ if (!isLogged()) {
                 <li>
                     <a href="index.php">
                         <img src="./asset/img/back.png" alt="">
-                        <p>Site principal</p>
+                        <p>Accueil</p>
                     </a>
                 </li>
             <?php } ?>
