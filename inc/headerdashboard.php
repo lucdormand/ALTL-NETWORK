@@ -34,14 +34,14 @@ if (!isLogged()) {
             </li>
             <li>
                 <a href="logs.php">
-                    <img src="asset/img/dashboard-graphique.png" alt="">
+                    <img src="asset/img/log-file.png" alt="">
                     <p>Logs</p>
                 </a>
             </li>
             <?php if (isLogged()) { ?>
                 <li>
                     <a href="dashboard.php">
-                        <img src="asset/img/member-card.png" alt="">
+                        <img src="asset/img/dashboard-graphique.png" alt="">
                         <p>Tableau de bord</p>
                     </a>
                 </li>
