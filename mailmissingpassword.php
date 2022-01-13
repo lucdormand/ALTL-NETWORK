@@ -59,7 +59,8 @@ if (!empty($_POST['submitted'])) {
             </div>
             <div>
                 <?php  echo'<a class="miss" href="login.php">Vous possédez déjà un compte ? <strong>Connectez-vous directement</strong></a><br>'?>
-                <?php  echo'<a class="miss" href="register.php">Vous n\'avez pas de compte ? <strong>Inscrivez-vous gratuitement</strong></a>'?>
+                <?php  echo'<a class="miss" href="register.php">Vous n\'avez pas de compte ? <strong>Inscrivez-vous gratuitement</strong></a><br><br>'?>
+                <?php  echo'<a class="miss" href="index.php">Retourner sur l\'accueil</a>'?>
             </div>
 
         </form>

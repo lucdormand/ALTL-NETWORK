@@ -125,7 +125,8 @@ if(!empty($_POST['submitted'])) {
                 <input type="submit" name="submitted" value="Inscription">
             </div>
             <div>
-                <?php  echo'<a class="miss" href="login.php">Vous possédez déjà un compte ? <strong>Connectez-vous directement</strong></a>'?>
+                <?php  echo'<a class="miss" href="login.php">Vous possédez déjà un compte ? <strong>Connectez-vous directement</strong></a><br><br>'?>
+                <?php  echo'<a class="miss" href="index.php">Retourner sur l\'accueil</a>'?>
             </div>
 
         </form>
