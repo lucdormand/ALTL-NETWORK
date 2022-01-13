@@ -13,6 +13,7 @@ if (!isLogged()) {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Poppins:ital,wght@0,400;0,700;1,100&display=swap" rel="stylesheet">
@@ -26,23 +27,23 @@ if (!isLogged()) {
             <img src="./asset/img/Logo_ALTL.png" width="300" height="140" alt="Logo" class="logo_img" >
         </a>
         <ul class="flex sb">
-            <li>
-                <a href="index.php">
-                    <img src="./asset/img/home.png" alt="">
-                    <p>Accueil</p>
-                </a>
-            </li>
-            <li>
-                <a href="logs.php">
-                    <img src="./asset/img/dashboard-graphique.png" alt="">
-                    <p>Logs</p>
-                </a>
-            </li>
             <?php if (isLogged()) { ?>
                 <li>
                     <a href="dashboard.php">
-                        <img src="./asset/img/member-card.png" alt="">
+                        <img src="./asset/img/sec.png" alt="">
                         <p>Tableau de bord</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="logs.php">
+                        <img src="./asset/img/log-file.png" alt="">
+                        <p>Logs</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php">
+                        <img src="./asset/img/back.png" alt="">
+                        <p>Site principal</p>
                     </a>
                 </li>
             <?php } ?>

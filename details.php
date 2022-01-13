@@ -15,7 +15,7 @@ if (empty($trameCurrent)) {
     header('Location: logs.php');
 }
 
-include('inc/header.php');
+include('inc/headerdashboard.php');
 
 
 
@@ -25,33 +25,50 @@ include('inc/header.php');
 <div class="separator"></div>
 <table class="details_table wrap">
     <tr>
-        <td>Etat</td>
-        <td>Date de réception</td>
-        <td>Identification</td>
-        <td>Code</td>
-        <td>Protocole</td>
-        <td>IP de départ</td>
-        <td>IP de destination</td>
-        <td>TTL</td>
+        <thead>
+            <td>Etat</td>
+            <td>Date de réception</td>
+            <td>Identification</td>
+            <td>Code</td>
+            <td>Protocole</td>
+            <td>IP de départ</td>
+            <td>IP de destination</td>
+            <td>TTL</td>
+        </thead>
     </tr>
     <tr>
-        <?php if ($trameCurrent['status'] == 'timeout') {
-            echo '<td><img src="asset/img/cross.png" alt="Erreur : timeout" class="img_status"></td>';
-                }
+        <tbody>
+            <?php if ($trameCurrent['status'] == 'timeout') {
+                echo '<td><img src="asset/img/cross.png" alt="Erreur : timeout" class="img_status"></td>';
+            }
             else {
                 echo '<td><img src="asset/img/tick.png" alt="OK" class="img_status"></td>';
             }?>
 
-        <td><?=date("d/m/Y", strtotime($trameCurrent['date']));?> à <?=date("H:i:s", strtotime($trameCurrent['date']));?></td>
-        <td><?=$trameCurrent['identification'];?></td>
-        <td><?=$trameCurrent['flags_code'];?></td>
-        <td><?=$trameCurrent['protocol_name'];?></td>
-        <td><?=$trameCurrent['ip_from'];?></td>
-        <td><?=$trameCurrent['ip_dest'];?></td>
-        <td><?=$trameCurrent['ttl'];?></td>
+            <td><?=date("d/m/Y", strtotime($trameCurrent['date']));?> à <?=date("H:i:s", strtotime($trameCurrent['date']));?></td>
+            <td><?=$trameCurrent['identification'];?></td>
+            <td><?=$trameCurrent['flags_code'];?></td>
+            <td><?=$trameCurrent['protocol_name'];?></td>
+            <td><?=$trameCurrent['ip_from'];?></td>
+            <td><?=$trameCurrent['ip_dest'];?></td>
+            <td><?=$trameCurrent['ttl'];?></td>
+        </tbody>
     </tr>
 </table>
 
+<?php if ($trameCurrent['status'] == 'timeout') {
+  echo '<div class="bulle danger">
+        <span><i class="fas fa-info-circle"></i> Echec</span>
+        <p>Cette trame n\'a pas aboutie à un succès !</p>
+    </div>';
+
+} else {
+    echo '<div class="bulle success">
+        <span><i class="fas fa-info-circle"></i> Succès</span>
+        <p>Cette trame a aboutie à un succès !</p>
+    </div>';
+}
+?>
 
 
 
