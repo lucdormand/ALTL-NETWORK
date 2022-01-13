@@ -439,6 +439,17 @@ footer .sprite4:hover {
 }
 
 /* DASHBOARD */
+#dashboard_home .dashboardBtn {
+    width: 13%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Poppins;
+    cursor: pointer;
+    background-color: #cce5ff;
+}
+#dashboard_home .dashboardBtn p:hover {
+    font-weight: 700;
+}
 #dashboard_home .wrap h2:first-of-type {
     font-size: 2rem;
     text-align: center;
@@ -477,7 +488,14 @@ footer .sprite4:hover {
 }
 .details_table {
     width: 100%;
-    padding: 2rem 1rem;
+    padding: 4rem 1rem;
+    font-family: Poppins;
+}
+.details_table thead {
+    text-decoration-line: underline;
+}
+.details_table tbody {
+    font-weight: 700;
 }
 .details_table tr td {
     text-align: center;
@@ -496,5 +514,30 @@ footer .sprite4:hover {
 }
 .logs_list li a {
     color: white;
+}
+.logs_list li a:hover {
+    background-color: #2C2C2C;
+    padding: .4rem;
+}
 
+
+/* Bulle INFO, WARNING, DANGER, SUCCESS */
+.bulle {
+    color: black;
+    font-size: .8rem;
+    padding: 1rem;
+    margin: 0 1rem 2rem 1rem;
+    border-radius: 8px;
+    box-shadow: 2px 2px rgba(0,0,0,0.05);
+}
+.bulle.info { background-color: #d1ecf1; }
+.bulle.danger { background-color: #f8d7da; }
+.bulle.success { background-color: #d4edda; }
+.bulle.warning { background-color: #fff3cd; }
+.bulle span {
+    font-weight: 700;
+    font-family: Arvo;
+}
+.bulle p {
+    font-family: Poppins;
 }
