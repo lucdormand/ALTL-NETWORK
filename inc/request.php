@@ -90,7 +90,7 @@ function selectProtocolChecksumCountisDisabled(){
                  FROM trames WHERE protocol_checksum_status = 'disabled'";
     $query4 = $pdo->prepare($sql4);
     $query4->execute();
-    return json_encode($query4->fetchAll());
+    return $query4->fetchAll();
 }
 
 function selectAllDatesOrderByASC(){
