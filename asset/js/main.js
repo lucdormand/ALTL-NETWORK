@@ -50,7 +50,7 @@ if (window.location.href.includes("dashboard") || window.location.href.includes(
     $(document).ready(function () {
         $.ajax({
             type: "POST",
-            url: "inc/ajaxdash.php",
+            url: "inc/ajax2.php?request=protocol",
             data: {
                 data: 'count'
             },
@@ -195,7 +195,7 @@ if (window.location.href.includes("dashboard") || window.location.href.includes(
     $(document).ready(function () {
         $.ajax({
             type: "POST",
-            url: "inc/ajaxdash2.php",
+            url: "inc/ajax2.php?request=timeout",
             data: {
                 data: 'count'
             },
@@ -206,7 +206,7 @@ if (window.location.href.includes("dashboard") || window.location.href.includes(
 
                 $.ajax({
                     type: "POST",
-                    url: "inc/ajaxdash3.php",
+                    url: "inc/ajax2.php?request=count_total",
                     data: {
                         data: 'count'
                     },
@@ -274,7 +274,7 @@ if (window.location.href.includes("dashboard") || window.location.href.includes(
     $(document).ready(function () {
         $.ajax({
             type: "POST",
-            url: "inc/ajaxdash4.php",
+            url: "inc/ajax2.php?request=protocol_checksum",
             data: {
                 data: 'count'
             },
@@ -285,7 +285,7 @@ if (window.location.href.includes("dashboard") || window.location.href.includes(
 
                 $.ajax({
                     type: "POST",
-                    url: "inc/ajaxdash3.php",
+                    url: "inc/ajax2.php?request=count_total",
                     data: {
                         data: 'count'
                     },
