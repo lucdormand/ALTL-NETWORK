@@ -1,12 +1,8 @@
 <?php
-
-
 require('inc/PDO.php');
 require('inc/fonctions.php');
-$sql2 = "SELECT DISTINCT protocol_name FROM trames";
-$query = $pdo->prepare($sql2);
-$query->execute();
-$trames = $query->fetchAll();
+require('inc/request.php');
+$trames = selectNotDoublonProtocol();
 
 include('inc/headerdashboard.php') ?>
 

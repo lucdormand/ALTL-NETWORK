@@ -1,8 +1,9 @@
 <?php
 session_start();
 
-require('inc/pdo.php');
+require('inc/PDO.php');
 require('inc/fonctions.php');
+require('inc/request.php');
 
 verifUserAlreadyConnected();
 
@@ -12,12 +13,7 @@ if(!empty($_POST['submitted'])) {
     // Faille xss
     $login   = trim(strip_tags($_POST['login']));
     $password  = trim(strip_tags($_POST['password']));
-
-    $sql = "SELECT * FROM reseau_user WHERE email = :login";
-    $query = $pdo->prepare($sql);
-    $query->bindValue(':login',$login,PDO::PARAM_STR);
-    $query->execute();
-    $user= $query->fetch();
+    $user= selectAllUserLogin($login);
 
     if(empty($user)) {
         $errors['login'] = 'Email invalide';

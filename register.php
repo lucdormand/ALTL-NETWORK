@@ -1,7 +1,8 @@
 <?php
 session_start();
-require('inc/PDO.php');
+require('inc/pdo.php');
 require('inc/fonctions.php');
+require('inc/request.php');
 verifUserAlreadyConnected();
 $success=false;
 $errors = [];
@@ -44,14 +45,7 @@ if(!empty($_POST['submitted'])) {
         // hashpassword
         $hashpassword = password_hash($password,PASSWORD_DEFAULT);
         // INSERT INTO
-        $sql = " INSERT INTO `reseau_user`(`email`, `pseudo`, `password`, `token`, `status`, `created_at`)
-                VALUES (:email,:pseudo,:password,:token,'user',NOW())";
-        $query = $pdo->prepare($sql);
-        $query->bindValue(':pseudo',     $pseudo,      PDO::PARAM_STR);
-        $query->bindValue(':email',      $email,       PDO::PARAM_STR);
-        $query->bindValue(':password',   $hashpassword,PDO::PARAM_STR);
-        $query->bindValue(':token',      $token,       PDO::PARAM_STR);
-        $query->execute();
+        inscription($pseudo,$email,$hashpassword,$token);
         // redirection
         $success=true;
         header('refresh:5;url=index.php');

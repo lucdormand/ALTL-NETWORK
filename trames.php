@@ -1,19 +1,13 @@
 <?php
+require('inc/pdo.php');
 require('inc/fonctions.php');
-require('inc/PDO.php');
+require('inc/request.php');
 
 //debug($_GET);
 
-$sql = "SELECT * FROM trames WHERE protocol_name = :protocol_name";
-$query = $pdo->prepare($sql);
-$query -> bindValue(':protocol_name',$_GET['protocol']);
-$query->execute();
-$trameCurrent = $query->fetchAll();
+$trameCurrent = selectAllByProtocolName();
 
-$sql2 = "SELECT DISTINCT protocol_name FROM trames";
-$query = $pdo->prepare($sql2);
-$query->execute();
-$trames = $query->fetchAll();
+$trames = selectNotDoublonProtocol();
 
 //debug($trameCurrent);
 if (empty($trameCurrent)) {

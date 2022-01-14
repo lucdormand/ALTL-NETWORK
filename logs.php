@@ -1,24 +1,10 @@
 <?php
-require('inc/fonctions.php');
 require('inc/PDO.php');
-
-
-
-$sql = "SELECT * FROM trames";
-$query = $pdo->prepare($sql);
-
-$query->execute();
-$trames = $query->fetchAll();
-
-//debug($trames);
-$sql2 = "SELECT DISTINCT protocol_name FROM trames";
-$query = $pdo->prepare($sql2);
-$query->execute();
-$trames2 = $query->fetchAll();
-
+require('inc/fonctions.php');
+require('inc/request.php');
+$trames = selectAll();
+$trames2 = selectNotDoublonProtocol();
 include('inc/headerdashboard.php');
-
-
 ?>
 
     <h1 class="dashboard_title">Journal d'activité</h1>
