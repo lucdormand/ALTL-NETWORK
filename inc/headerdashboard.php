@@ -44,7 +44,7 @@ if (!isLogged()) {
                 <li>
                     <a href="ip.php">
                         <img src="./asset/img/ip.png" alt="">
-                        <p>IP</p>
+                        <p>IPgit</p>
                     </a>
                 </li>
                 <li>
