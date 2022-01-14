@@ -25,6 +25,7 @@ include('inc/header.php');
             <div class="title_contact">
                 <h2>Nous Contacter</h2>
             </div>
+            <div class="separator"></div>
             <?php if(!empty($_SESSION)){ echo'<link rel="stylesheet" href="asset/css/style_user.css">';} else {echo '<link rel="stylesheet" href="asset/css/style.css">';} ?>
             <div id="form_contact">
                 <form action="" method="post" class="wrapform" novalidate>

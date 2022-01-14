@@ -33,7 +33,7 @@
                 <?php } ?>
             </li>
             <li>
-                <a href="#">Nous contacter</a>
+                <a href="contact.php">Nous contacter</a>
             </li>
         </ul>
     </div>
