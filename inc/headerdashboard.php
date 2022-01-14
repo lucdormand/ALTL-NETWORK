@@ -42,6 +42,12 @@ if (!isLogged()) {
                     </a>
                 </li>
                 <li>
+                    <a href="ip.php">
+                        <img src="./asset/img/ip.png" alt="">
+                        <p>IP</p>
+                    </a>
+                </li>
+                <li>
                     <a href="index.php">
                         <img src="./asset/img/back.png" alt="">
                         <p>Accueil</p>

@@ -446,4 +446,3 @@ $('.testsAjax').ready(function ()  {
 
 
 
-
