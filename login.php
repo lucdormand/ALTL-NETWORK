@@ -57,9 +57,9 @@ if(!empty($_POST['submitted'])) {
                 <input type="submit" name="submitted" value="Connexion">
             </div>
             <div>
-                <?php  echo'<a class="miss" href="mailmissingpassword.php">Mot de passe oublié ?</a><br>'?>
-                <?php  echo'<a class="miss" href="register.php">Vous n\'avez pas de compte ? <strong>Inscrivez-vous gratuitement</strong></a><br><br>'?>
-                <?php  echo'<a class="miss" href="index.php">Retourner sur l\'accueil</a>'?>
+                <?php  echo'<a class="miss password_miss" href="mailmissingpassword.php">Mot de passe oublié ?</a><br>'?>
+                <?php  echo'<a class="miss no_account" href="register.php">Vous n\'avez pas de compte ? <strong>Inscrivez-vous gratuitement</strong></a><br><br>'?>
+                <?php  echo'<a class="miss return" href="index.php">Retourner sur l\'accueil</a>'?>
             </div>
 
         </form>
