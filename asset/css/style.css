@@ -505,7 +505,9 @@ footer .sprite4:hover {
     padding: 4rem 1rem;
     font-family: Poppins;
 }
-
+.ip_table {
+    padding: 4rem 10vw;
+}
 .details_table thead, .ip_table thead {
     text-decoration-line: underline;
 }
@@ -517,6 +519,9 @@ footer .sprite4:hover {
 }
 .details_table tr td, .ip_table tr td {
     text-align: center;
+}
+.ip_table tr td {
+    width: 50%;
 }
 
 .logs_list {
