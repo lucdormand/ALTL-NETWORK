@@ -88,7 +88,7 @@ if(!empty($_POST['submitted'])) {
 
             <div class="info_box">
 
-                <h3>Email :</h3>
+                <h3>Nom d'utilisateur :</h3>
                 <label for="pseudo"></label>
                 <input type="text" placeholder="Nom d'utilisateur*" id="pseudo" name="pseudo" value="<?=recupInputValue('pseudo');?>">
                 <hr>
@@ -96,7 +96,7 @@ if(!empty($_POST['submitted'])) {
             <span class="error"><?= viewError($errors,'pseudo'); ?></span>
             <div class="info_box">
 
-                <h3>Nom d'utilisateur :</h3>
+                <h3>Email :</h3>
                 <label for="email"></label>
                 <input type="email" placeholder="Email*" id="email" name="email" value="<?= recupInputValue('email'); ?>">
                 <hr>
