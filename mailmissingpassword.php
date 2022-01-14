@@ -1,9 +1,9 @@
 <?php
-
 session_start();
-
-require('inc/pdo.php');
 require('inc/fonctions.php');
+require('inc/request.php');
+require('inc/PDO.php');
+include('inc/header.php');
 
 verifUserAlreadyConnected();
 $errors = [];
@@ -11,13 +11,8 @@ if (!empty($_POST['submitted'])) {
     // Faille xss
     $email = trim(strip_tags($_POST['email']));
 
-
     if (empty($errors['email'])) {
-        $sql = "SELECT * FROM reseau_user WHERE email = :email";
-        $query = $pdo->prepare($sql);
-        $query->bindValue(':email', $email, PDO::PARAM_STR);
-        $query->execute();
-        $verifPseudo = $query->fetch();
+        $verifPseudo = selectAllUserEmail($email);
         if (empty($verifPseudo)) {
             $errors['email'] = 'Aucune compte avec cet email ';
         }

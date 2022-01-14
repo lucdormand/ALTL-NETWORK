@@ -24,7 +24,7 @@ if(!empty($_POST['submitted'])) {
         $query = $pdo->prepare($sql);
         $query->bindValue(':token',$token,PDO::PARAM_STR);
         $query->execute();
-        $user = $query->fetch();
+        $user = selectAllUserToken($token);
     }
     // password
     if(!empty($password) || !empty($password2)) {
@@ -40,11 +40,7 @@ if(!empty($_POST['submitted'])) {
         // hashpassword
         $hashpassword = password_hash($password,PASSWORD_DEFAULT);
         // INSERT INTO
-        $sql = "UPDATE `reseau_user` SET `password`=:password WHERE token=:token";
-        $query = $pdo->prepare($sql);
-        $query->bindValue(':password',$hashpassword,PDO::PARAM_STR);
-        $query->bindValue(':token',$token,PDO::PARAM_STR);
-        $query->execute();
+        updatePassword($hashpassword,$token);
         // redirection
         $success=true;
     }

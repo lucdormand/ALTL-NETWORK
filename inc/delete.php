@@ -1,5 +1,6 @@
 <?php
 require_once('PDO.php');
+require_once('request.php');
 //include('headerdashboard.php');
 //$tab = [
 //    'code' => 200,
@@ -8,9 +9,7 @@ require_once('PDO.php');
 //echo json_encode($_POST);
 
 
-$sql = "DELETE FROM trames";
-$query = $pdo ->prepare($sql);
-$query ->execute();
+deleteAllTrames();
 //echo 'ajax2';
 //header("Location: ../dashboard.php");
 //include('inc/footer.php');

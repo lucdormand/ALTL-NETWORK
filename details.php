@@ -1,14 +1,10 @@
 <?php
-require('inc/fonctions.php');
 require('inc/PDO.php');
+require('inc/fonctions.php');
+require('inc/request.php');
 
 //debug($_GET);
-
-$sql = "SELECT * FROM trames WHERE id = :id";
-$query = $pdo->prepare($sql);
-$query -> bindValue(':id',$_GET['id']);
-$query->execute();
-$trameCurrent = $query->fetch();
+$trameCurrent = selectAllById($_GET['id']);
 
 //debug($trameCurrent);
 if (empty($trameCurrent)) {

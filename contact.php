@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('inc/fonctions.php');
 $errors=array();
 if(!empty($_POST['submitted']))
