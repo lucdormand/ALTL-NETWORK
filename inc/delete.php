@@ -1,5 +1,6 @@
 <?php
 require_once('PDO.php');
+//include('headerdashboard.php');
 //$tab = [
 //    'code' => 200,
 //    'message' => 'insertion BDD ok'
@@ -10,7 +11,9 @@ require_once('PDO.php');
 $sql = "DELETE FROM trames";
 $query = $pdo ->prepare($sql);
 $query ->execute();
-echo 'bdd ok';
 //echo 'ajax2';
+//header("Location: ../dashboard.php");
+//include('inc/footer.php');
+
 
 

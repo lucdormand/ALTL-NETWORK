@@ -537,7 +537,7 @@ footer .sprite4:hover {
     font-weight: 700;
 }
 .btn_trames:hover {
-    border: 2px solid #2C2C2C;
+    outline: 2px solid #2C2C2C;
     color: #2C2C2C;
     background: none;
 }

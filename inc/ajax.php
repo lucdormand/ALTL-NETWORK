@@ -29,11 +29,15 @@ foreach ($_POST['data'] as $key => $value) {
     $ip_from = long2ip(hexdec($_POST['data'][$i]['ip']['from']));
     $ip_dest = long2ip(hexdec($_POST['data'][$i]['ip']['dest']));
 
-    $sql = "SELECT COUNT(*) FROM `trames` WHERE identification = :identification";
+    $sql = "SELECT COUNT(*) FROM `trames` WHERE identification = :identification AND date = :date";
     $query = $pdo ->prepare($sql);
     $query -> bindValue(':identification',$identification);
+    $query -> bindValue(':date',$date);
+//    $query -> bindValue(':protocol_type',$protocol_type);
     $query ->execute();
     $check = $query->fetchColumn();
+    echo 'check:';
+    echo $check;
 
     if ($check == 0) {
         $sql = "INSERT INTO trames (date,version,headerlength,service,identification,status,flags_code,ttl,protocol_name,protocol_flags_code,protocol_checksum_status,protocol_checksum_code,protocol_ports_from,protocol_ports_dest,protocol_type,protocol_code,headerchecksum,ip_from,ip_dest) 
