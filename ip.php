@@ -33,8 +33,27 @@ include('inc/headerdashboard.php');
     <tr>
         <tbody>
             <td><?= $ip['protocol_name'] ?></td>
+            <?php if ($ip['ip_from'] == '172.217.19.227' OR $ip['ip_from'] == '216.58.198.206') {?>
+                <td><?=$ip['ip_from'];?> (Google.com)</td>
+            <?php }
+        elseif ($ip['ip_from'] == '52.49.17.168') {?>
+            <td><?=$ip['ip_from'];?> (Amazon.com)</td>
+        <?php }  elseif ($ip['ip_from'] == '216.58.168.12') {?>
+                <td><?=$ip['ip_from'];?> (Flexential.com)</td>
+            <?php } else  {?>
             <td><?=$ip['ip_from'];?></td>
-            <td><?=$ip['ip_dest'];?></td>
+        <?php } ?>
+
+            <?php if ($ip['ip_dest'] == '172.217.19.227' OR $ip['ip_dest'] == '216.58.198.206') {?>
+                <td><?=$ip['ip_dest'];?> (Google.com)</td>
+            <?php }
+         elseif ($ip['ip_dest'] == '52.49.17.168') {?>
+            <td><?=$ip['ip_dest'];?> (Amazon.com)</td>
+            <?php } elseif ($ip['ip_dest'] == '216.58.168.12') {?>
+                <td><?=$ip['ip_dest'];?> (Flexential.com)</td>
+            <?php } else  {?>
+                <td><?=$ip['ip_dest'];?></td>
+            <?php } ?>
         </tbody>
     </tr>
     <?php } ?>
