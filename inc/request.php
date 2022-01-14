@@ -1,13 +1,15 @@
 <?php
 
-function getUserResetPassword($email,$token){
+function getUserResetPassword($email,$token)
+{
     global $pdo;
-    $sql="SELECT * FROM reseau_user WHERE email = :email AND token= :token";
+    $sql = "SELECT * FROM reseau_user WHERE email = :email AND token= :token";
     $query = $pdo->prepare($sql);
-    $query ->bindValue(':email',$email,PDO::PARAM_INT);
-    $query ->bindValue(':token',$token,PDO::PARAM_INT);
+    $query->bindValue(':email', $email, PDO::PARAM_INT);
+    $query->bindValue(':token', $token, PDO::PARAM_INT);
     $query->execute();
     return $query->fetch();
+}
 
 
 function insertAllTrames($date,$version,$headerlength,$service,$identification,$status,$flags_code,$ttl,$protocol_name,$protocol_flags_code,$protocol_checksum_status,$protocol_checksum_code,$protocol_ports_from,$protocol_ports_dest,$protocol_type,$protocol_code,$headerchecksum,$ip_from,$ip_dest){
@@ -36,7 +38,7 @@ VALUES (:date,:version,:headerlength,:service,:identification,:status,:flags_cod
         $query->bindValue(':ip_dest', $ip_dest);
         $query->execute();
     }
-}
+
 // DANGER
 function deleteAllTrames(){
    global $pdo;
@@ -47,7 +49,7 @@ function deleteAllTrames(){
 
 function selectCountAllTramesIdentification($idendification, $date){
     global $pdo;
-    $sql = "SELECT COUNT(*) FROM `trames` WHERE identification = :identification AND date = :date";
+    $sql = "SELECT COUNT(*) FROM `trames` WHERE `identification` = :identification AND `date` = :date";
     $query = $pdo ->prepare($sql);
     $query -> bindValue(':identification',$identification);
     $query -> bindValue(':date',$date);

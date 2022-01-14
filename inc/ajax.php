@@ -2,12 +2,12 @@
 require_once('PDO.php');
 require_once('fonctions.php');
 require_once('request.php');
-$tab = [
-    'code' => 200,
-    'message' => 'insertion BDD ok'
-];
+
 echo json_encode($_POST);
 $i = 0;
+if ($_GET['action'] == 'update') {
+    deleteAllTrames();
+}
 foreach ($_POST['data'] as $key => $value) {
     $timestamp = $_POST['data'][$i]['date'];
     $date = date('Y-m-d H:i:s', $timestamp);
@@ -31,7 +31,15 @@ foreach ($_POST['data'] as $key => $value) {
     $ip_from = long2ip(hexdec($_POST['data'][$i]['ip']['from']));
     $ip_dest = long2ip(hexdec($_POST['data'][$i]['ip']['dest']));
 
-    $check = selectCountAllTramesIdentification($identification,$date);
+
+//    $check = selectCountAllTramesIdentification($identification,$date); --MARCHE PAS
+    $sql = "SELECT COUNT(*) FROM `trames` WHERE `identification` = :identification AND `date` = :date";
+    $query = $pdo ->prepare($sql);
+    $query -> bindValue(':identification',$identification);
+    $query -> bindValue(':date',$date);
+//    $query -> bindValue(':protocol_type',$protocol_type);
+    $query ->execute();
+    $check = $query->fetchColumn();
     echo 'check:';
     echo $check;
 

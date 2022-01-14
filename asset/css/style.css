@@ -525,16 +525,28 @@ input[type=submit]{
 
 
 /* DASHBOARD */
-#dashboard_home .dashboardBtn {
+#dashboard_home .dashboardBtn, #dashboard_home .updateBtn {
     width: 13%;
-    margin: 0 auto;
+    margin: 1rem auto;
+    margin-bottom: 2rem;
     text-align: center;
     font-family: Poppins;
     cursor: pointer;
     background-color: #cce5ff;
     min-width: 190px;
 }
-#dashboard_home .dashboardBtn p:hover {
+#dashboard_home .updateBtn {
+    display: block;
+    margin: 20px;
+    padding: 5px;
+    top: -30px;
+    right: 10vw;
+}
+#dashboard_home .updateBtn:nth-of-type(2) {
+    top: 30px;
+}
+
+#dashboard_home .dashboardBtn p:hover, #dashboard_home .updateBtn:hover {
     font-weight: 700;
 }
 #dashboard_home .wrap h2:first-of-type {

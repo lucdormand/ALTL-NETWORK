@@ -46,7 +46,7 @@ sr.reveal('.wrap2',{
 
 
 //CHARTS and BUTTONS
-if (window.location.href.includes("dashboard") || window.location.href.includes("add") || window.location.href.includes("ip"))  {
+if (window.location.href.includes("dashboard") || window.location.href.includes("ip"))  {
     $(document).ready(function () {
         $.ajax({
             type: "POST",
@@ -451,8 +451,7 @@ $(".scroll").click(function (){
 });
 
 
-$('.testsAjax').ready(function ()  {
-
+if (window.location.href.includes("add")) {
     $.ajax({
         type: "POST",
         url: "asset/json/frames.json",
@@ -461,7 +460,7 @@ $('.testsAjax').ready(function ()  {
                 type: "POST",
                 url: "inc/ajax.php",
                 // contentType: "application/json",
-                dataType: "json",
+                // dataType: "json",
                 data: {
                     data:response
                 },
@@ -471,12 +470,44 @@ $('.testsAjax').ready(function ()  {
                     $.each(response.data, function (i) {
                         console.log(response.data[i])
                         console.log('ajax1 ok')
+
+
                     })
+                    location.href = "dashboard.php"
                 }
             })
         }
     })
-})
+}
+
+if (window.location.href.includes("update")) {
+    $.ajax({
+        type: "POST",
+        url: "asset/json/frames.json",
+        success: function(response) {
+            $.ajax({
+                type: "POST",
+                url: "inc/ajax.php?action=update",
+                // contentType: "application/json",
+                // dataType: "json",
+                data: {
+                    data:response
+                },
+                success: function (response) {
+                    // console.log(response)
+                    console.log('ajax1 ok')
+                    $.each(response.data, function (i) {
+                        console.log(response.data[i])
+                        console.log('ajax1 ok')
+
+
+                    })
+                    location.href = "dashboard.php"
+                }
+            })
+        }
+    })
+}
 
 
 

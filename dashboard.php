@@ -10,14 +10,19 @@ include('inc/headerdashboard.php') ?>
     <div class="wrap">
 
         <h2>Bienvenue sur votre tableau de bord</h2>
-        <div class="dashboardBtn">
-            <p>Voir en pourcentages</p>
+        <div class="relative">
+            <a class="updateBtn absolute" href="add_trames.php">Ajouter de nouvelles trames</a>
+            <a class="updateBtn absolute" href="update_trames.php">Mettre à jour la liste des trames</a>
         </div>
+
         <div class="graph1 graph1Nb">
             <canvas id="graph1"></canvas>
         </div>
         <div class="graph1 graph1Percent" style="display: none">
             <canvas id="graph1P"></canvas>
+        </div>
+        <div class="dashboardBtn">
+            <p>Voir en pourcentages</p>
         </div>
         <ul class="protocols">
             <?php foreach ($trames as $trame) { ?>
