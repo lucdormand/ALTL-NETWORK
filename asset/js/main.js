@@ -32,8 +32,8 @@ sr.reveal('.wrap2',{
 
 
 
-//CHARTS
-if (window.location.href.includes("dashboard") || window.location.href.includes("add"))  {
+//CHARTS and BUTTONS
+if (window.location.href.includes("dashboard") || window.location.href.includes("add") || window.location.href.includes("ip"))  {
     $(document).ready(function () {
         $.ajax({
             type: "POST",
@@ -338,6 +338,7 @@ if (window.location.href.includes("dashboard") || window.location.href.includes(
     })
     let percentage = 0
     $(".dashboardBtn").click(function () {
+        console.log('ok')
         $(".graph1Nb").toggle()
         $(".graph1Percent").toggle()
         if (percentage == 0) {
@@ -346,6 +347,19 @@ if (window.location.href.includes("dashboard") || window.location.href.includes(
         } else {
             $(".dashboardBtn p").html("Voir en pourcentages")
             percentage = 0
+        }
+
+    })
+    let ip_details = 0
+    $(".ipBtn").click(function () {
+        $(".ip_table").toggle()
+        $(".details_table").toggle()
+        if (ip_details == 0) {
+            $(".ipBtn p").html("Masquer les détails")
+            ip_details = 1
+        } else {
+            $(".ipBtn p").html("Afficher les détails")
+            ip_details = 0
         }
 
     })

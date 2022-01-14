@@ -446,6 +446,7 @@ footer .sprite4:hover {
     font-family: Poppins;
     cursor: pointer;
     background-color: #cce5ff;
+    min-width: 190px;
 }
 #dashboard_home .dashboardBtn p:hover {
     font-weight: 700;
@@ -487,18 +488,33 @@ footer .sprite4:hover {
     padding: 2rem 0;
     font-size: 2.5rem;
 }
-.details_table {
+.ipBtn {
+    width: 13%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Poppins;
+    cursor: pointer;
+    background-color: #cce5ff;
+    min-width: 175px;
+}
+.ipBtn p:hover {
+    font-weight: 700;
+}
+.details_table, .ip_table {
     width: 100%;
     padding: 4rem 1rem;
     font-family: Poppins;
 }
-.details_table thead {
+.ip_table {
+    padding: 2rem 1rem;
+}
+.details_table thead, .ip_table thead {
     text-decoration-line: underline;
 }
-.details_table tbody {
+.details_table tbody, .ip_table tbody {
     font-weight: 700;
 }
-.details_table tr td {
+.details_table tr td, .ip_table tr td {
     text-align: center;
 }
 
@@ -535,6 +551,7 @@ footer .sprite4:hover {
     background-color: #2C2C2C;
     color: white;
     font-weight: 700;
+
 }
 .btn_trames:hover {
     outline: 2px solid #2C2C2C;
