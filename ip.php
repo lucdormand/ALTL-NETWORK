@@ -56,9 +56,7 @@ include('inc/headerdashboard.php');
                 </tbody>
             </tr>
         <?php } ?>
-    </table>
-
-    <table class="ip_table wrap">
+    
         <tr>
             <thead>
             <td>IP de destination (total)</td>

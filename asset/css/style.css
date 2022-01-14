@@ -505,11 +505,12 @@ footer .sprite4:hover {
     padding: 4rem 1rem;
     font-family: Poppins;
 }
-.ip_table {
-    padding: 2rem 1rem;
-}
+
 .details_table thead, .ip_table thead {
     text-decoration-line: underline;
+}
+.ip_table thead {
+    margin-top: 0.5rem;
 }
 .details_table tbody, .ip_table tbody {
     font-weight: 700;
