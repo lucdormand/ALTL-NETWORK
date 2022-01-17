@@ -21,6 +21,32 @@ VANTA.NET({
     maxDistance: 28.00,
     spacing: 20.00
 })
+
+VANTA.GLOBE({
+    el: "#js_bg2",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    color: 0x3fff60,
+    backgroundColor: 0x0
+})
+VANTA.GLOBE({
+    el: "#js_bg3",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    color: 0x3fff60,
+    backgroundColor: 0x0
+})
+
 window.sr = ScrollReveal();
 
 sr.reveal('.footer',{
