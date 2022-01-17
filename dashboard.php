@@ -8,7 +8,6 @@ include('inc/headerdashboard.php') ?>
 
 <section id="dashboard_home">
     <div class="wrap">
-
         <h2>Bienvenue sur votre tableau de bord</h2>
         <div class="relative">
             <a class="updateBtn absolute" href="add_trames.php">Ajouter de nouvelles trames</a>
