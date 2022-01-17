@@ -52,8 +52,43 @@ a {
     margin: 1rem auto;
 }
 
+/* Fil d'ariane */
+.ariane {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-content: center;
+    padding: 3rem 1rem;
+    font-family: Arvo;
+    font-weight: 700;
+}
+.ariane li::before {
+    content: "→";
+    padding: 0 .3rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
 
+.ariane li:first-child::before {
+    content: "";
+}
 
+.ariane li a.isactive {
+    background-color: #2C2C2C;
+    color: rgba(255, 255, 255, 0.95);
+    padding: .3rem 1rem;
+}
+.ariane li a {
+    outline: 2px solid #2C2C2C;
+    color: #2C2C2C;
+    background: none;
+    padding: .3rem 1rem;
+}
+.ariane li a:hover {
+    background-color: #2C2C2C;
+    color: rgba(255, 255, 255, 0.95);
+    padding: .3rem 1rem;
+}
 
 header, footer {
     font-weight: bold;

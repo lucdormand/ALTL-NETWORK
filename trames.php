@@ -19,7 +19,11 @@ include('inc/headerdashboard.php');
 
 
 ?>
-
+    <ul class="ariane">
+        <li><a id="btnDashboard" href="dashboard.php">Tableau de bord</a></li>
+        <li><a id="btnLog" href="logs.php">Journal d'activité</a></li>
+        <li><a id="btnDetailProtocol" class="isactive" href="">Détail du protocol</a></li>
+    </ul>
 <h1 class="dashboard_title">Détails de toutes les trames du protocol <?= $_GET['protocol'] ?></h1>
 <div class="separator"></div>
 <ul class="protocols">

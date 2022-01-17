@@ -25,7 +25,7 @@ include('inc/header.php');
 <section id="info">
 <div class="wrap">
 <!--BOITE 1-->
-    <div class="box_info">
+    <div class="box_info box1">
         <div class="info_img">
             <img src="asset/img/about.png" alt="">
         </div>
@@ -40,7 +40,7 @@ include('inc/header.php');
     </div>
 
 <!--BOITE 2-->
-    <div class="box_info">
+    <div class="box_info box2">
         <div class="info_img">
             <img src="asset/img/safety.png" alt="">
         </div>
@@ -54,7 +54,7 @@ include('inc/header.php');
         </div>
     </div>
 <!--BOITE 3-->
-    <div class="box_info">
+    <div class="box_info box3">
         <div class="info_img">
             <img src="asset/img/safety_2.png" alt="">
         </div>
