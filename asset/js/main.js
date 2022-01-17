@@ -409,53 +409,6 @@ if (window.location.href.includes("dashboard") || window.location.href.includes(
 
 }
 
-// NON TERMINE
-// $(document).ready(function () {
-//     $.ajax({
-//         type: "POST",
-//         url: "inc/ajaxdash5.php",
-//         data: {
-//             data: 'count'
-//         },
-//         dataType: "json",
-//         success: function (date) {
-//             console.log('ajaxD5 ok')
-//             console.log(date)
-//             $.each(date, function(i) {
-//                 window["count_" + date[i]["date"].replace('-','_')]
-//                 console.log("count_" + date[i]["date"].replace('-','_'))
-//                 // window[i+date[i]["date"]]
-//                 // console.log(i+' '+date[i]["date"])
-//             });
-//
-//
-//
-//             const data = {
-//                 labels: ['Jan', 'Fev', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet'],
-//                 datasets: [{
-//                     label: 'My First Dataset',
-//                     data: [count_2020_12, count_2020_12, count_2020_12, count_2020_12, count_2020_12, count_2020_12, count_2020_12],
-//                     fill: false,
-//                     borderColor: 'rgb(75, 192, 192)',
-//                     tension: 0.1
-//                 }]
-//             };
-//
-//             const config = {
-//                 type: 'bar',
-//                 data: data,
-//                 options: {
-//                     responsive: true,
-//                 }
-//             };
-//             const myChart = new Chart(
-//                 document.querySelector('#graph4'),
-//                 config
-//             );
-//
-//         }
-//     })
-// })
 
 
 
