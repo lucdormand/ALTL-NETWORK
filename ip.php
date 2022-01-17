@@ -27,6 +27,10 @@ include('inc/headerdashboard.php');
 
 ?>
 
+<ul class="ariane">
+    <li><a id="btnDashboard" href="dashboard.php">Tableau de bord</a></li>
+    <li><a id="btnIp" class="isactive" href="ip.php">Liste des adresses IP<a></li>
+</ul>
 <h1 class="dashboard_title">Adresses IP</h1>
 <div class="separator"></div>
 <div class="ipBtn"><p>Afficher les détails</p></div>
