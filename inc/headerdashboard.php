@@ -23,7 +23,7 @@ if (!isLogged()) {
 <body>
 <header class="wrap">
     <div class="flex sb">
-        <a class="header_logo" href="/index.php">
+        <a class="header_logo" href="index.php">
             <img src="asset/img/Logo_ALTL.png" width="300" height="140" alt="Logo" class="logo_img" >
         </a>
         <ul class="flex sb">
