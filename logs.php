@@ -11,7 +11,7 @@ include('inc/headerdashboard.php');
     <div class="separator"></div>
     <div class="bulle info">
         <span><i class="fas fa-info-circle"></i> Information</span>
-        <p>Sur cette page, vous pouvez voir l'ensemble des activités avec diverses informations comme les adresses IP, l'horodatage de chaque trame.</p>
+        <p>Sur cette page, vous pouvez voir l'ensemble des activités avec diverses informations concernant chaque trame. Clickez sur une trame pour en voir les détails</p>
     </div>
     <ul class="protocols">
         <?php foreach ($trames2 as $trame) { ?>
@@ -23,9 +23,13 @@ include('inc/headerdashboard.php');
     <?php
     foreach ($trames as $trame) {
         if ($trame['status'] == 'timeout') {
-            echo '<li><a title="Accédez au détail de cette trame" href="details.php?id='.$trame['id'].'" class="red">'.date("d/m/Y", strtotime($trame['date']));?> à <?=date("H:i:s", strtotime($trame['date'])).' :<br>Trame '.$trame['protocol_name'].' venant de '.$trame['ip_from'].' vers '.$trame['ip_dest'].'</a></li>';
-        } else {
-            echo '<li><a title="Accédez au détail de cette trame" href="details.php?id='.$trame['id'].'">'.date("d/m/Y", strtotime($trame['date']));?> à <?=date("H:i:s", strtotime($trame['date'])).' :<br>Trame '.$trame['protocol_name'].' venant de '.$trame['ip_from'].' vers '.$trame['ip_dest'].'</a></li>';
+            echo '<li><a title="Cette trame n\'a pas pu arriver à destination." href="details.php?id='.$trame['id'].'" class="red">'.date("d/m/Y", strtotime($trame['date']));?> à <?=date("H:i:s", strtotime($trame['date'])).' :<br>Trame '.$trame['protocol_name'].' venant de '.$trame['ip_from'].' vers '.$trame['ip_dest'].'</a></li>';
+        }
+        elseif ($trame['ttl']<100) {
+            echo '<li><a title="Le TTL de cette trame indique un potentiel problème sur le réseau." href="details.php?id='.$trame['id'].'" class="orange">'.date("d/m/Y", strtotime($trame['date']));?> à <?=date("H:i:s", strtotime($trame['date'])).' :<br>Trame '.$trame['protocol_name'].' venant de '.$trame['ip_from'].' vers '.$trame['ip_dest'].'</a></li>';
+        }
+        else {
+            echo '<li><a title="Cette trame n\'a pas rencontré de probleme." href="details.php?id='.$trame['id'].'">'.date("d/m/Y", strtotime($trame['date']));?> à <?=date("H:i:s", strtotime($trame['date'])).' :<br>Trame '.$trame['protocol_name'].' venant de '.$trame['ip_from'].' vers '.$trame['ip_dest'].'</a></li>';
         }
 
     }

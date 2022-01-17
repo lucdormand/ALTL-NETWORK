@@ -576,6 +576,9 @@ input[type=submit]{
 .red {
     color: #FF0000!important;
 }
+.orange {
+    color: orange!important;
+}
 
 .img_status {
     height: 32px;

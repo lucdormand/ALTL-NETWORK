@@ -61,10 +61,25 @@ if (window.location.href.includes("dashboard") || window.location.href.includes(
                 console.log(total_count)
 
                 //TROUVE LE NOMBRE DE TRAMES DE CHAQUE TYPE
+
                 $.each(total_count, function(i) {
                     window["count_" + total_count[i]["protocol_name"].replace('.','')] = total_count[i]["COUNT(*)"]
+
                     console.log("count_" + total_count[i]["protocol_name"].replace('.',''))
                 });
+                if (typeof count_ICMP === 'undefined') {
+                    count_ICMP = 0
+                }
+                if (typeof count_UDP === 'undefined') {
+                    count_UDP = 0
+                }
+                if (typeof count_TCP === 'undefined') {
+                    count_TCP = 0
+                }
+                if (typeof count_TLSv12 === 'undefined') {
+                    count_TLSv12 = 0
+                }
+
                 var total_trames = 0
 
                 //TROUVE LE TOTAL DES TRAMES POUR POURCENTAGES
