@@ -68,7 +68,8 @@ if(!empty($_POST['submitted'])) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-<section id="register_form">
+<section id="js_bg3">
+<div id="register_form">
     <div class="lines">
         <div class="line"></div>
         <div class="line"></div>
@@ -126,12 +127,17 @@ if(!empty($_POST['submitted'])) {
         </form>
         <?php } else {echo'<div class="info_box_success"><h2>Bienvenue ! Votre compte a bien été créé !</h2><h4>Redirection dans 5 secondes.</h4></div>';} ?>
     </div>
+</div>
 </section>
 
+
 <script src="https://unpkg.com/scrollreveal"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-<script src="asset/js/jquery.flexslider.js"></script>
+<script src="asset/flexslider/jquery.flexslider.js"></script>
 <script src="asset/js/main.js"></script>
 </body>
 </html>
