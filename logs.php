@@ -6,7 +6,10 @@ $trames = selectAll();
 $trames2 = selectNotDoublonProtocol();
 include('inc/headerdashboard.php');
 ?>
-
+    <ul class="ariane">
+        <li><a id="btnDashboard" href="dashboard.php">Tableau de bord</a></li>
+        <li><a id="btnLog" class="isactive" href="logs.php">Journal d'activité</a></li>
+    </ul>
     <h1 class="dashboard_title">Journal d'activité</h1>
     <div class="separator"></div>
     <div class="bulle info">

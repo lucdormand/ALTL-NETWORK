@@ -524,6 +524,23 @@ if (window.location.href.includes("update")) {
     })
 }
 
+$(document).ready(function () {
 
-
+    $("#btnDetailTrame").click('on', function (e) {
+        e.preventDefault();
+        if (window.location.href == 'http://localhost/projets/projet-reseau/logs.php') {
+            alert('Veuillez sélectionner une trame en dessous pour voir les détails de cette dernière.')
+        } else if (window.location.href == 'http://localhost/projets/projet-reseau/dashboard.php') {
+            alert('Vous n\'êtes pas sur la page des logs')
+        }
+    });
+    $("#btnDetailProtocol").click('on', function (e) {
+        e.preventDefault();
+        if (window.location.href == 'http://localhost/projets/projet-reseau/logs.php') {
+            alert('Veuillez sélectionner un protocol en dessous pour voir les détails de cette dernière.')
+        } else if (window.location.href == 'http://localhost/projets/projet-reseau/dashboard.php') {
+            alert('Vous n\'êtes pas sur la page des logs')
+        }
+    });
+});
 
