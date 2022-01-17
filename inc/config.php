@@ -2,5 +2,5 @@
 
 $dbname = 'projet_reseau';
 $user = 'root';
-$pw = '';
+$pw = 'root';
 $host = 'localhost';
