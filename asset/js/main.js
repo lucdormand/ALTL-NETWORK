@@ -41,6 +41,21 @@ sr.reveal('.wrap2',{
     distance: '70%',
 
 });
+sr.reveal('.box1',{
+    origin: 'left',
+    duration: 2500,
+    distance: '100%',
+});
+sr.reveal('.box2',{
+    origin: 'right',
+    duration: 2500,
+    distance: '100%',
+});
+sr.reveal('.box3',{
+    origin: 'bottom',
+    duration: 2500,
+    distance: '100%',
+});
 
 
 
