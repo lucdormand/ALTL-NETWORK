@@ -37,7 +37,10 @@
             </li>
         </ul>
     </div>
+    <div class="footer_info">
             <p class="copyrights">@Copyright placeholder</p>
+            <a href="mentionslegales.php"><p>Mentions légales</p></a>
+    </div>
 </footer>
 
 <script src="https://unpkg.com/scrollreveal"></script>

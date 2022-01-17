@@ -331,6 +331,13 @@ footer .sprite4:hover {
 footer .social_icons p {
     padding: 1rem 0;
 }
+footer .footer_info{
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+    gap:.5rem;
+    padding-bottom: 1rem;
+}
 
 
 /* INSCRIPTION */
@@ -665,6 +672,19 @@ input[type=submit]{
     color: #2C2C2C;
     background: none;
 }
+/*Mentions légales*/
+#mentions .wrap{
+    display:flex;
+    flex-flow: column;
+    gap:2rem;
+    padding: 3rem 0;
+    max-width: 800px;
+    margin: auto;
+    width: 100%;
+
+}
+
+
 
 /* Bulle INFO, WARNING, DANGER, SUCCESS */
 .bulle {
