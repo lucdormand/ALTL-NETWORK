@@ -23,6 +23,10 @@ include('inc/headerdashboard.php') ?>
         <div class="dashboardBtn">
             <p>Voir en pourcentages</p>
         </div>
+
+        <div class="detailsBtn">
+            <p>Filtres :</p>
+        </div>
         <ul class="protocols">
             <?php foreach ($trames as $trame) { ?>
                 <li><a class="btn_trames" target="_blank" title="Accédez à toutes les trames du protocol <?= $trame['protocol_name']?>" href="trames.php?protocol=<?= $trame['protocol_name'] ?>"><?= $trame['protocol_name'] ?></a></li>
@@ -39,9 +43,7 @@ include('inc/headerdashboard.php') ?>
             </div>
         </div>
 
-        <div class="graph4">
-            <canvas id="graph4"></canvas>
-        </div>
+
     </div>
 </section>
 <?php

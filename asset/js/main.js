@@ -538,3 +538,117 @@ $(document).ready(function () {
     });
 });
 
+//Burger menu
+let burgerMenuOpen = 0
+$('.headerBurger').click(function () {
+    if (burgerMenuOpen == 0) {
+        $('.burgerMenu').fadeIn(200)
+        burgerMenuOpen = 1
+    } else {
+        $('.burgerMenu').fadeOut(200)
+        burgerMenuOpen = 0
+    }
+
+
+    console.log('click')
+})
+
+//Dashboard menu
+let dashMenuOpen = 0
+$('.detailsBtn').click(function () {
+    console.log('click')
+    if (dashMenuOpen == 0) {
+        $('#dashboard_home ul').fadeIn(200)
+        dashMenuOpen = 1
+    } else {
+        $('#dashboard_home ul').fadeOut(200)
+        dashMenuOpen = 0
+    }
+    console.log('click')
+})
+
+let logsMenuOpen = 0
+$('.detailsBtn').click(function () {
+    console.log('click')
+    if (logsMenuOpen == 0) {
+        $('.protocols').fadeIn(200)
+        logsMenuOpen = 1
+    } else {
+        $('.protocols').fadeOut(200)
+        logsMenuOpen = 0
+    }
+    console.log('click')
+})
+let tramesMenuOpen = 0
+
+$('.detailsBtn').click(function () {
+    console.log('click')
+    if (tramesMenuOpen == 0) {
+        $('.protocols').fadeIn(200)
+        tramesMenuOpen = 1
+    } else {
+        $('.protocols').fadeOut(200)
+        tramesMenuOpen = 0
+    }
+    console.log('click')
+})
+var $window = $(window);
+function checkWidth() {
+    var windowsize = $window.width();
+    if (windowsize > 680) {
+        if (tramesMenuOpen == 0) {
+            $('.protocols').fadeIn(10)
+            if( $(".protocols").css('display') == 'block') {
+                $('.protocols').css("display", "flex")
+            }
+            tramesMenuOpen = 1
+        }
+        if (logsMenuOpen == 0) {
+            $('.protocols').fadeIn(10)
+            if( $(".protocols").css('display') == 'block') {
+                $('.protocols').css("display", "flex")
+            }
+            logsMenuOpen = 1
+        }
+        if (dashMenuOpen == 0) {
+            $('.protocols').fadeIn(10)
+            if( $(".protocols").css('display') == 'block') {
+                $('.protocols').css("display", "flex")
+            }
+            dashMenuOpen = 1
+        }
+        tramesMenuOpen = 1
+        logsMenuOpen = 1
+        dashMenuOpen = 1
+        console.log('screen')
+        } else {
+        tramesMenuOpen = 0;
+        console.log('small')
+
+        if (tramesMenuOpen == 1) {
+            $('.protocols').fadeOut(10)
+            tramesMenuOpen = 0
+            if( $(".protocols").css('display') == 'flex') {
+                $('.protocols').css("display", "block")
+            }
+
+        }
+        if (logsMenuOpen == 1) {
+            $('.protocols').fadeOut(10)
+            logsMenuOpen = 0
+            if( $(".protocols").css('display') == 'flex') {
+                $('.protocols').css("display", "block")
+            }
+        }
+        if (dashMenuOpen == 1) {
+            $('.protocols').fadeOut(10)
+            dashMenuOpen = 0
+            if( $(".protocols").css('display') == 'flex') {
+                $('.protocols').css("display", "block")
+            }
+        }
+    }
+    }
+
+
+$(window).resize(checkWidth);

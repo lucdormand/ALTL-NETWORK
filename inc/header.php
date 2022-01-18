@@ -13,12 +13,12 @@
     <link rel="stylesheet" href="asset\css\style.css">
 </head>
 <body>
-    <header class="wrap">
+    <header class="wrap relative">
         <div class="flex sb">
             <a class="header_logo" href="index.php">
                 <img src="asset/img/Logo_ALTL.png" width="300" height="140" alt="Logo" class="logo_img" >
             </a>
-            <ul class="flex sb">
+            <ul class="flex sb headerNav">
                 <li>
                     <a href="index.php#accueil">
                         <img src="./asset/img/home.png" alt="">
@@ -55,5 +55,41 @@
                     <a href="logout.php">Se déconnecter</a>
                 </div>
             <?php } ?>
+            <div class="headerBurger absolute">
+                <img src="asset/img/burger-bar.png" alt="">
+                <nav class="burgerMenu absolute">
+                    <ul>
+                        <li>
+                            <a href="index.php#accueil">
+                                Accueil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.php#info">
+                                A propos
+                            </a>
+                        </li>
+                        <?php if (isLogged()) { ?>
+                            <li>
+                                <a href="dashboard.php">
+                                    Tableau de bord
+                                </a>
+                            </li>
+                            <li>
+                                <a href="logout.php">Se déconnecter</a>
+                            </li>
+                        <?php } ?>
+                        <?php if (!isLogged()) { ?>
+                                <li>
+                                    <a href="register.php">S'inscrire</a>
+                                </li>
+                                <li>
+                                    <a href="login.php">Se connecter</a>
+                                </li>
+                        <?php }?>
+
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>

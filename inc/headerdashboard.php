@@ -70,5 +70,42 @@ if (!isLogged()) {
                 <a href="./logout.php">Se déconnecter</a>
             </div>
         <?php } ?>
+        <div class="headerBurger absolute">
+            <img src="asset/img/burger-bar.png" alt="">
+            <nav class="burgerMenu absolute">
+                <ul>
+                    <?php if (isLogged()) { ?>
+                    <li>
+                        <a href="dashboard.php">
+                            <p>Tableau de bord</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="logs.php">
+                            <p>Logs</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="ip.php">
+                            <p>IPgit</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.php">
+                            <p>Accueil</p>
+                        </a>
+                    </li>
+                    <?php } if (!isLogged()) { ?>
+                        <li>
+                            <a href="register.php">S'inscrire</a>
+                        </li>
+                        <li>
+                            <a href="login.php">Se connecter</a>
+                        </li>
+                    <?php }?>
+
+                </ul>
+            </nav>
+        </div>
     </div>
 </header>

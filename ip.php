@@ -34,7 +34,7 @@ include('inc/headerdashboard.php');
 <h1 class="dashboard_title">Adresses IP</h1>
 <div class="separator"></div>
 <div class="ipBtn"><p>Afficher les détails</p></div>
-
+<div class="table_div">
     <table class="ip_table wrap">
         <tr>
             <thead>
@@ -127,7 +127,7 @@ include('inc/headerdashboard.php');
     </tr>
     <?php } ?>
 </table>
-
+</div>
 
 
 <?php
