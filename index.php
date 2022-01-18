@@ -31,10 +31,10 @@ include('inc/header.php');
         </div>
         <div class="info_txt">
             <div class="info_txt_title">
-                <h2>Qui sommes nous ?</h2>
+                <h2>Qui sommes-nous ?</h2>
             </div>
             <div class="info_txt_para">
-                <p>Nous sommes une entreprise qui a été fondée en 1999 par un ingénieur en Master. Son but était d’analyser les traffics sur les différentes pages de son site web. Pour cela, il utilise une technologie très avancée qui permet de répertorier sous forme de liste en temps réel, le traffic de son site web.</p>
+                <p>Nous sommes une entreprise qui a été fondée en 1999 par un ingénieur en Master. Son but était d’analyser les trafics sur les différentes pages de son site web. Pour cela, il utilise une technologie très avancée qui permet de répertorier sous forme de liste en temps réel, le trafic de son site web.</p>
             </div>
         </div>
     </div>
@@ -97,7 +97,7 @@ include('inc/header.php');
 
                         <div class="slide_item">
                             <h2>Dépannage Informatique à Distance</h2>
-                            <p> Experte de vos solutions informatiques, ALTL Network est aussi capabale de régler vos problèmes à distance de manière sécurisée et efficace </p>
+                            <p> Experte de vos solutions informatiques, ALTL Network est aussi capable de régler vos problèmes à distance de manière sécurisée et efficace </p>
                         </div>
                         <img src="https://i.picsum.photos/id/2/1600/800.jpg?hmac=DxffnWozDEZ2IAf_N_GKli1UZ-XJWa-hlby2bCnttSI" />
                     </li>

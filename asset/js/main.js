@@ -443,7 +443,7 @@ $(function() {
     var words = [
             'CHEZ ALTL NETWORK',
             'VOTRE SECURITÉ EST NOTRE PRIORITÉ',
-            'NOUS SOMME DISPONIBLE 24H/24',
+            'NOUS SOMMES DISPONIBLES 24H/24',
 
         ],
         i = 0;
