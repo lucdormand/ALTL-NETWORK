@@ -52,7 +52,7 @@
     </div>
     <div class="footer_info">
             <p class="copyrights">@Copyright placeholder</p>
-            <a href="mentionslegales.php"><p>Mentions légales</p></a>
+            <a href="mentionslegales.php" class="copyrights"><p>Mentions légales</p></a>
     </div>
 </footer>
 
