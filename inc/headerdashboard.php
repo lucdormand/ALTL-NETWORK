@@ -38,13 +38,13 @@ if (!isLogged()) {
                 <li>
                     <a href="logs.php">
                         <img src="./asset/img/log-file.png" alt="">
-                        <p>Logs</p>
+                        <p>Journal des trames</p>
                     </a>
                 </li>
                 <li>
                     <a href="ip.php">
                         <img src="./asset/img/ip.png" alt="">
-                        <p>IPgit</p>
+                        <p>Page des IPs</p>
                     </a>
                 </li>
                 <li>
@@ -82,12 +82,12 @@ if (!isLogged()) {
                     </li>
                     <li>
                         <a href="logs.php">
-                            <p>Logs</p>
+                            <p>Journal des trames</p>
                         </a>
                     </li>
                     <li>
                         <a href="ip.php">
-                            <p>IPgit</p>
+                            <p>Page des IPs</p>
                         </a>
                     </li>
                     <li>

@@ -275,11 +275,11 @@ if (window.location.href.includes("dashboard") || window.location.href.includes(
                         const a = parseInt(count_timeout[0]['COUNT(*)']);
                         const data = {
                             labels: [
-                                'Timeout',
-                                'OK'
+                                'Echouée',
+                                'Succès'
                             ],
                             datasets: [{
-                                label: 'Trame(s) échouée(s)',
+                                label: 'Taux de requête',
                                 data: [a, dif],
                                 backgroundColor: [
                                     'rgb(186,13,50)',
@@ -354,11 +354,11 @@ if (window.location.href.includes("dashboard") || window.location.href.includes(
                         const a = parseInt(count_protocol_checksum_status[0]['COUNT(*)'])
                         const data = {
                             labels: [
-                                'Disabled',
-                                'Good'
+                                'Désactivé',
+                                'Activé'
                             ],
                             datasets: [{
-                                label: 'Perte(s) d\'intégrité des données',
+                                label: 'Status sur l\'intégrité des données',
                                 data: [a, dif],
                                 backgroundColor: [
                                     'rgb(186,13,50)',
