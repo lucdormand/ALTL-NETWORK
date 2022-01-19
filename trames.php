@@ -21,7 +21,7 @@ include('inc/headerdashboard.php');
 ?>
     <ul class="ariane">
         <li><a id="btnDashboard" href="dashboard.php">Tableau de bord</a></li>
-        <li><a id="btnLog" href="logs.php">Journal d'activité</a></li>
+        <li><a id="btnLog" href="logs.php">Journal des trames</a></li>
         <li><a id="btnDetailProtocol" class="isactive" href="">Détail du protocol</a></li>
     </ul>
 <section id="trames">

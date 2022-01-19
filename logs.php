@@ -9,13 +9,13 @@ include('inc/headerdashboard.php');
 <section id="logs">
     <ul class="ariane">
         <li><a id="btnDashboard" href="dashboard.php">Tableau de bord</a></li>
-        <li><a id="btnLog" class="isactive" href="logs.php">Journal d'activité</a></li>
+        <li><a id="btnLog" class="isactive" href="logs.php">Journal des trames</a></li>
     </ul>
-    <h1 class="dashboard_title">Journal d'activité</h1>
+    <h1 class="dashboard_title">Journal des trames</h1>
     <div class="separator"></div>
     <div class="bulle info">
         <span><i class="fas fa-info-circle"></i> Information</span>
-        <p>Sur cette page, vous pouvez voir l'ensemble des activités avec diverses informations concernant chaque trame. Clickez sur une trame pour en voir les détails</p>
+        <p>Sur cette page, vous pouvez voir l'ensemble des activités avec diverses informations concernant chaque trame. Cliquez sur une trame pour en voir les détails</p>
     </div>
     <div class="detailsBtn">
         <p>Filtres :</p>
