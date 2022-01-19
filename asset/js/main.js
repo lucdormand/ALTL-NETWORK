@@ -652,3 +652,19 @@ function checkWidth() {
 
 
 $(window).resize(checkWidth);
+if (localStorage.getItem('cookiesAcceptedALTL') === null) {
+    console.log('vide');
+    $('.cookiesBox').show();
+    $('.cookiesBox').css('display','flex')
+    $('.cookiesBox .accept').on('click', function () {
+        localStorage.setItem('cookiesAcceptedALTL', 'on')
+        $('.cookiesBox').fadeOut(150);
+    })
+    $('.cookiesBox .refuse').on('click', function () {
+        localStorage.setItem('cookiesAcceptedALTL', 'off')
+        $('.cookiesBox').fadeOut(150);
+    })
+} else {
+    console.log(localStorage.getItem('cookiesAcceptedALTL'))
+}
+

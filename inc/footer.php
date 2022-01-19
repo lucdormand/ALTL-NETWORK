@@ -1,3 +1,16 @@
+
+<div class="cookiesBox flex">
+    <p>ALTL utilise des cookies, avec l'accord de l'utilisateur. Voulez vous activer les cookies?</p>
+    <div>
+        <div class="cookiesBtn accept flex">
+            <p>Accepter</p>
+        </div>
+        <div class="cookiesBtn refuse flex">
+            <p>Refuser</p>
+        </div>
+    </div>
+</div>
+
 <footer class="wrap">
     <div class="flex footer">
 
@@ -42,6 +55,10 @@
             <a href="mentionslegales.php"><p>Mentions légales</p></a>
     </div>
 </footer>
+
+
+
+
 
 <?php
 include_once('inc/scripts.php')
