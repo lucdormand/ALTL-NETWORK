@@ -2,7 +2,7 @@
 session_start();
 $onDashboard = false;
 if (!isLogged()) {
-    header("Location: index.php");
+    header("Location: index.php?unauthorized=1");
 }
 ?>
 <!doctype html>

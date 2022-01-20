@@ -13,7 +13,17 @@
     <link rel="stylesheet" href="asset\css\style.css">
 </head>
 <body>
+<?php
+if (!empty($_GET['unauthorized']) && $_GET['unauthorized'] == 1) {?>
+    <div class="unauthorized">
+        <p>Vous avez été automatiquement redirigé sur l'accueil car vous ne possédez pas l'autorisation d'accéder à la page demandée. <br>
+            <a href="login"> Connectez-vous ici</a> ou <a href="login">inscrivez-vous ici </a>si vous n'avez pas de compte sur ALTL Network.
+    </div>
+    <?php unset($_GET['unauthorized']);
+}?>
     <header class="wrap relative">
+
+
         <div class="flex sb">
             <a class="header_logo" href="index.php">
                 <img src="asset/img/Logo_ALTL.png" width="300" height="140" alt="Logo" class="logo_img" >

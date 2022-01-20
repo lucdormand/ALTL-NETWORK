@@ -99,7 +99,16 @@ header, footer {
     font-size: 0.9rem;
     font-family: poppins;
 }
-
+.unauthorized {
+    background-color: rgba(255,0,0,0.25);
+    width: 100vw;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+.unauthorized a {
+    text-decoration: underline;
+}
 header .logo_img, footer .logo_img {
     height: 100px;
     margin: 5px 0;
