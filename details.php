@@ -29,12 +29,13 @@ include('inc/headerdashboard.php');
             <thead>
                 <td>Etat</td>
                 <td>Date de réception</td>
-                <td>Identification</td>
+                <td title="Numéro d'identification de la trame">Identification</td>
                 <td>Code</td>
                 <td>Protocole</td>
+                <td title="indique s'il s'agit d'une demande ou d'une réponse d'écho (trames ICMP)">Type du protocole</td>
                 <td>IP de départ</td>
                 <td>IP de destination</td>
-                <td>TTL</td>
+                <td title="Time To Live : calcule le temps passé pour arriver à destination (plus bas = plus long)">TTL</td>
             </thead>
         </tr>
         <tr>
@@ -50,6 +51,17 @@ include('inc/headerdashboard.php');
                 <td><?=$trameCurrent['identification'];?></td>
                 <td><?=$trameCurrent['flags_code'];?></td>
                 <td><?=$trameCurrent['protocol_name'];?></td>
+                <?php if ($trameCurrent['protocol_name'] == 'ICMP') {
+                    if ($trameCurrent['protocol_type'] == 0) {
+                        echo '<td>'.$trameCurrent['protocol_type'].' (Réponse)</td>';
+                    } elseif ($trameCurrent['protocol_type'] == 8) {
+                        echo '<td>'.$trameCurrent['protocol_type'].' (Demande)</td>';
+                    } else {
+                        echo '<td>'.$trameCurrent['protocol_type'].'</td>';
+                    }
+                }   else {
+                    echo '<td>N/A</td>';
+                }?>
                 <td><?=$trameCurrent['ip_from'];?></td>
                 <td><?=$trameCurrent['ip_dest'];?></td>
                 <td><?=$trameCurrent['ttl'];?></td>
@@ -61,13 +73,13 @@ include('inc/headerdashboard.php');
 <?php if ($trameCurrent['status'] == 'timeout') {
   echo '<div class="bulle danger">
         <span><i class="fas fa-exclamation-circle"></i> Echec</span>
-        <p>Cette trame n\'a pas abouti à un succès !</p>
+        <p>Cette trame n\'a pas pu arriver à destination (timeout) !</p>
     </div>';
 
 } else {
     echo '<div class="bulle success">
         <span><i class="fas fa-check-circle"></i> Succès</span>
-        <p>Cette trame a abouti à un succès !</p>
+        <p>Cette trame est arrivée à destination !</p>
     </div>';
 }
 ?>
