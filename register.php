@@ -28,6 +28,26 @@ if(!empty($_POST['submitted'])) {
             $errors['email'] = 'Vous avez déjà un compte avec cette adresse mail';
         }
     }
+    if(empty($errors['email'])) {
+        $sql = "SELECT * FROM reseau_user WHERE email = :email";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':email',$email,PDO::PARAM_STR);
+        $query->execute();
+        $verifEmail = $query->fetch();
+        if(!empty($verifEmail)) {
+            $errors['email'] = 'Vous avez déjà un compte avec cette adresse mail';
+        }
+    }
+    if(empty($errors['pseudo'])) {
+        $sql = "SELECT * FROM reseau_user WHERE pseudo = :pseudo";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':pseudo',$pseudo,PDO::PARAM_STR);
+        $query->execute();
+        $verifPseudo = $query->fetch();
+        if(!empty($verifPseudo)) {
+            $errors['pseudo'] = 'Un compte avec ce nom d\'utilsateur existe déjà';
+        }
+    }
 
     // password
     if(!empty($password) || !empty($password2)) {
@@ -38,6 +58,10 @@ if(!empty($_POST['submitted'])) {
         }
     } else {
         $errors['password'] = 'Veuillez renseigner un mot de passe';
+    }
+//    CGU check
+    if (empty($_POST['cgu'])) {
+        $errors['cgu'] = 'Veuillez accepter les conditions d\'utilisation';
     }
     if(count($errors) == 0) {
         // generate token
@@ -113,6 +137,11 @@ if(!empty($_POST['submitted'])) {
                 <input type="password" placeholder="Confirmer Mot de passe*" id="password2" name="password2" value="">
                 <hr>
                 <p>Les champs avec * sont requis</p>
+                <div class="cguRegister">
+                    <input type="checkbox" name="cgu">J'accepte les <a href="mentionslegales.php">conditions d'utilisations</a> de ALTL Network.
+
+                </div>
+                <span class="error"><?= viewError($errors,'cgu'); ?></span>
             </div>
 
             <div class="info_box_button">

@@ -13,6 +13,11 @@ if(!empty($_POST['submitted']))
     $errors=mailValidation($errors,$email,'email');
     $errors=textValidation($errors,$message,'message',11,500);
 
+    //    CGU check
+    if (empty($_POST['cguContact'])) {
+        $errors['cguContact'] = 'Veuillez accepter les conditions d\'utilisation';
+    }
+
     //If no error
     if(count($errors)==0){
         mail('altlnetworksupport@gmail.com', 'Envoi depuis la page Contact', $_POST['message'], 'From: ' . $_POST['email']);
@@ -49,6 +54,12 @@ include('inc/header.php');
                         <label for="message"></label>
                         <textarea type="text" placeholder="Votre message...*" id="message" name="message" value=""></textarea>
                         <span class="error"><?= viewError($errors,'message'); ?></span>
+                    </div>
+                    <div class="cguContact">
+
+                            <input type="checkbox" name="cguContact">En soumettant ce formulaire, j'accepte que les informations saisies dans ce formulaire soient utilisées, exploitées, traitées pour permettre de me recontacter, dans le cadre de la relation commerciale qui découle de cette demande d'informations.
+                        <span class="error"><?= viewError($errors,'cguContact'); ?></span>
+
                     </div>
                     <div class="button_type1">
                         <input type="submit" name="submitted" value="ENVOYER">

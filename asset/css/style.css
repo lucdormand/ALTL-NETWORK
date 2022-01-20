@@ -681,6 +681,10 @@ footer .footer_info{
     cursor: pointer;
     padding: 7px;
 }
+#register_form input[type="checkbox"] {
+    width: auto;
+}
+
 #register_form .info_box_button{
     margin-top: 50px;
     text-align: center;
@@ -689,7 +693,18 @@ footer .footer_info{
 #register_form .error {
     color: red;
 }
+#register_form .cguRegister {
+    padding: 10px 1rem;
+}
 
+#register_form .cguRegister input {
+    margin-right: 7px;
+}
+#register_form .cguRegister a {
+    text-decoration: underline;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
 
 
 
@@ -725,6 +740,7 @@ footer .footer_info{
 #register_form .button_type1 {
     margin-bottom: 50px;
 }
+
 
 
 /*REGISTER LOGIN RESPONSIVE*/
@@ -763,7 +779,7 @@ footer .footer_info{
     background-color: white;
     max-width: 500px;
     width: 100%;
-    height:760px;
+    height:980px;
     margin: 0 auto;
 }
 #form_contact{display: flex;text-align: center;}
@@ -779,6 +795,13 @@ footer .footer_info{
     /*background-color: grey;*/
     padding: 0.5rem;
     width: 350px;
+}
+#form_contact .cguContact {
+    padding: 10px 1rem;
+}
+
+#form_contact .cguContact input {
+    margin-right: 7px;
 }
 #form_contact .boxinfo_contact textarea{
     border :solid 2px grey;
@@ -1193,6 +1216,6 @@ input[type=submit]{
 
 /*vanta background*/
 .vanta-canvas {
-    height: 100vh!important;
+    height: 100%!important;
     width: 100vw!important;
 }
