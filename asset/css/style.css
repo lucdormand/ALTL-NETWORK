@@ -108,6 +108,8 @@ header, footer {
 }
 .unauthorized a {
     text-decoration: underline;
+    font-size: 0.95rem;
+    font-weight: bold;
 }
 header .logo_img, footer .logo_img {
     height: 100px;

@@ -17,7 +17,7 @@
 if (!empty($_GET['unauthorized']) && $_GET['unauthorized'] == 1) {?>
     <div class="unauthorized">
         <p>Vous avez été automatiquement redirigé sur l'accueil car vous ne possédez pas l'autorisation d'accéder à la page demandée. <br>
-            <a href="login"> Connectez-vous ici</a> ou <a href="login">inscrivez-vous ici </a>si vous n'avez pas de compte sur ALTL Network.
+            <a href="login.php"> Connectez-vous ici</a> ou <a href="register.php">inscrivez-vous ici </a>si vous n'avez pas de compte sur ALTL Network.
     </div>
     <?php unset($_GET['unauthorized']);
 }?>
