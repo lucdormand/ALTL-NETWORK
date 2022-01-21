@@ -103,7 +103,7 @@ if(!empty($_POST['submitted'])) {
             <div class="wrap2">
 
                 <h1>Inscription</h1>
-                <?php if($success==true){ ?>
+                <?php if($success==false){ ?>
                 <form action="" method="post" class="wrapform" novalidate>
 
                     <div class="info_box">
