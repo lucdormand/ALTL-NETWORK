@@ -93,70 +93,72 @@ if(!empty($_POST['submitted'])) {
 </head>
 <body>
 <section id="js_bg3">
-<div id="register_form">
-    <div class="lines">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+    <div style="height: 100vh">
+        <div id="register_form">
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="wrap2">
+
+                <h1>Inscription</h1>
+                <?php if($success==false){ ?>
+                <form action="" method="post" class="wrapform" novalidate>
+
+                    <div class="info_box">
+
+                        <h3>Nom d'utilisateur :</h3>
+                        <label for="pseudo"></label>
+                        <input type="text" placeholder="Nom d'utilisateur*" id="pseudo" name="pseudo" value="<?=recupInputValue('pseudo');?>">
+                        <hr>
+                    </div>
+                    <span class="error"><?= viewError($errors,'pseudo'); ?></span>
+                    <div class="info_box">
+
+                        <h3>Email :</h3>
+                        <label for="email"></label>
+                        <input type="email" placeholder="Email*" id="email" name="email" value="<?= recupInputValue('email'); ?>">
+                        <hr>
+                    </div>
+                    <span class="error"><?= viewError($errors,'email'); ?></span>
+                    <div class="info_box">
+
+                        <h3>Mot de passe :</h3>
+                        <label for="password"></label>
+                        <input type="password" placeholder="Mot de passe*" id="password" name="password" value="">
+                        <hr>
+                    </div>
+                    <span class="error"><?= viewError($errors,'password'); ?></span>
+                    <div class="info_box">
+
+
+                        <h3>Confirmer le mot de passe :</h3>
+                        <label for="password2"></label>
+                        <input type="password" placeholder="Confirmer Mot de passe*" id="password2" name="password2" value="">
+                        <hr>
+                        <p>Les champs avec * sont requis</p>
+                        <div class="cguRegister">
+                            <input type="checkbox" name="cgu">J'accepte les <a href="mentionslegales.php">conditions d'utilisations</a> de ALTL Network.
+
+                        </div>
+                        <span class="error"><?= viewError($errors,'cgu'); ?></span>
+                    </div>
+
+                    <div class="info_box_button">
+
+                        <input type="submit" name="submitted" value="Inscription">
+                    </div>
+                    <div>
+                        <?php  echo'<a class="miss" href="login.php">Vous possédez déjà un compte ? <strong>Connectez-vous directement</strong></a><br><br>'?>
+                        <?php  echo'<a class="miss" href="index.php">Retourner sur l\'accueil</a>'?>
+                    </div>
+
+                </form>
+                <?php } else {echo'<div class="info_box_success"><h2>Bienvenue ! Votre compte a bien été créé !</h2><h4>Redirection dans 5 secondes.</h4></div>';} ?>
+            </div>
+        </div>
     </div>
-    <div class="wrap2">
-
-        <h1>Inscription</h1>
-        <?php if($success==false){ ?>
-        <form action="" method="post" class="wrapform" novalidate>
-
-            <div class="info_box">
-
-                <h3>Nom d'utilisateur :</h3>
-                <label for="pseudo"></label>
-                <input type="text" placeholder="Nom d'utilisateur*" id="pseudo" name="pseudo" value="<?=recupInputValue('pseudo');?>">
-                <hr>
-            </div>
-            <span class="error"><?= viewError($errors,'pseudo'); ?></span>
-            <div class="info_box">
-
-                <h3>Email :</h3>
-                <label for="email"></label>
-                <input type="email" placeholder="Email*" id="email" name="email" value="<?= recupInputValue('email'); ?>">
-                <hr>
-            </div>
-            <span class="error"><?= viewError($errors,'email'); ?></span>
-            <div class="info_box">
-
-                <h3>Mot de passe :</h3>
-                <label for="password"></label>
-                <input type="password" placeholder="Mot de passe*" id="password" name="password" value="">
-                <hr>
-            </div>
-            <span class="error"><?= viewError($errors,'password'); ?></span>
-            <div class="info_box">
-
-
-                <h3>Confirmer le mot de passe :</h3>
-                <label for="password2"></label>
-                <input type="password" placeholder="Confirmer Mot de passe*" id="password2" name="password2" value="">
-                <hr>
-                <p>Les champs avec * sont requis</p>
-                <div class="cguRegister">
-                    <input type="checkbox" name="cgu">J'accepte les <a href="mentionslegales.php">conditions d'utilisations</a> de ALTL Network.
-
-                </div>
-                <span class="error"><?= viewError($errors,'cgu'); ?></span>
-            </div>
-
-            <div class="info_box_button">
-
-                <input type="submit" name="submitted" value="Inscription">
-            </div>
-            <div>
-                <?php  echo'<a class="miss" href="login.php">Vous possédez déjà un compte ? <strong>Connectez-vous directement</strong></a><br><br>'?>
-                <?php  echo'<a class="miss" href="index.php">Retourner sur l\'accueil</a>'?>
-            </div>
-
-        </form>
-        <?php } else {echo'<div class="info_box_success"><h2>Bienvenue ! Votre compte a bien été créé !</h2><h4>Redirection dans 5 secondes.</h4></div>';} ?>
-    </div>
-</div>
 </section>
 
 <?php

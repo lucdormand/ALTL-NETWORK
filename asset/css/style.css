@@ -711,8 +711,8 @@ footer .footer_info{
 
 /*Se connecter*/
 
-#register_form {}
-#register_form h2 {
+
+#register_form h2, #register_form h4 {
     text-align: center;
 }
 
@@ -720,6 +720,7 @@ footer .footer_info{
     padding-top: 30px;
     text-align: center;
 }
+
 
 #register_form .miss {
     display: flex;
@@ -751,7 +752,6 @@ footer .footer_info{
     #register_form .wrap2 {
         max-width: 500px;
         background-color: white;
-        margin: 0 auto;
         padding: 10px;
         border-radius: 5px;
         box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
@@ -872,6 +872,7 @@ input[type=submit]{
         max-width: 500px;
         background-color: white;
         margin: 0 auto;
+
         padding: 10px;
         border-radius: 5px;
         box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
