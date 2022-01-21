@@ -72,7 +72,7 @@ if(!empty($_POST['submitted'])) {
         inscription($pseudo,$email,$hashpassword,$token);
         // redirection
         $success=true;
-//        header('refresh:5;url=index.php');
+        header("Location: index.php?newCompte=1");
     }
 }
 ?>
