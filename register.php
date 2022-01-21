@@ -72,7 +72,7 @@ if(!empty($_POST['submitted'])) {
         inscription($pseudo,$email,$hashpassword,$token);
         // redirection
         $success=true;
-        header('refresh:5;url=index.php');
+//        header('refresh:5;url=index.php');
     }
 }
 ?>
@@ -93,7 +93,7 @@ if(!empty($_POST['submitted'])) {
 </head>
 <body>
 <section id="js_bg3">
-    <div style="height: 100vh">
+    <div style="min-height: 100%; height: 100vh">
         <div id="register_form">
             <div class="lines">
                 <div class="line"></div>
@@ -103,7 +103,7 @@ if(!empty($_POST['submitted'])) {
             <div class="wrap2">
 
                 <h1>Inscription</h1>
-                <?php if($success==false){ ?>
+                <?php if($success==true){ ?>
                 <form action="" method="post" class="wrapform" novalidate>
 
                     <div class="info_box">
